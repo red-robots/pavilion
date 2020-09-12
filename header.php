@@ -42,4 +42,4 @@
 
 	<?php get_template_part("parts/banner"); ?>
 
-	<div id="content" class="site-content wrapper">
+	<div id="content" class="site-content">
