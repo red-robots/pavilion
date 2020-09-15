@@ -20,6 +20,9 @@ pre {
 	font-size: 13px;
 	line-height: 1.3;
 }
+a,button,input {
+	transition: all ease .3s;
+}
 body {
 	font-family: $font_primary;
 	font-size: 15px;
@@ -66,6 +69,11 @@ body {
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
+}
+.wrapper-narrow {
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
 }
 .site {
 	position: relative;
@@ -373,7 +381,74 @@ body {
 	float: left;
 	position: relative;
 }
+.col-title {
+	font-family: $font_secondary;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 1.2;
+	margin: 0 0 25px;
+	position: relative;
+	&:after {
+		content:"";
+		display: block;
+		width: 12%;
+		height: 2px;
+		background: $secondary;
+		margin: 20px 0 0;
+	}
+	@include tab {
+		font-size: 40px;
+	}
+}
+.btn-theme {
+	display: inline-block;
+	background: $primary;
+	color: #FFF;
+	padding: 14px 40px 12px 22px;
+	font-size: 15px;
+	line-height: 1.1;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	position: relative;
+	transition: all ease .3s;
+	.arrow {
+		display: inline-block;
+		width: 10px;
+		height: 100%;
+		position: absolute;
+		top: 3px;
+		right: 18px;
+		&:before, &:after {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: $secondary;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transition: all ease .3s;
+		}
+		&:before {
+			margin-top: -6px;
+			transform: translateY(-50%) rotate(42deg);
+		}
+		&:after {
+			transform: translateY(-50%) rotate(-42deg);
+		}
+	}
+	&:hover {
+		background: $secondary;
+		.arrow {
+			&:before,&:after {
+				background: #FFF;
+			}
+		}
+	}
+}
 .home-row-2 {
+	background: $light-gray;
 	position: relative;
 	&:after {
 		content:"";
@@ -396,22 +471,6 @@ body {
 		@include tab {
 			width: 80%;
 			padding-right: 5vw;
-		}
-		.title {
-			font-family: $font_secondary;
-			font-weight: 400;
-			font-size: 40px;
-			line-height: 1.2;
-			margin: 0 0 25px;
-			position: relative;
-			&:after {
-				content:"";
-				display: block;
-				width: 12%;
-				height: 2px;
-				background: $secondary;
-				margin: 20px 0 0;
-			}
 		}
 		.text {
 			position: relative;
@@ -442,54 +501,472 @@ body {
 		bottom: 0;
 		right: -5vw;
 		text-align: right;
-		a.btn {
-			display: inline-block;
-			background: $primary;
-			color: #FFF;
-			padding: 14px 40px 12px 22px;
-			font-size: 15px;
-			line-height: 1.1;
-			text-decoration: none;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			.arrow {
-				display: inline-block;
-				width: 10px;
-				height: 100%;
-				position: absolute;
-				top: 3px;
-				right: 18px;
-				&:before, &:after {
-					content:"";
-					display: block;
-					width: 100%;
-					height: 2px;
-					background: $secondary;
-					position: absolute;
-					top: 50%;
-					left: 0;
-					transition: all ease .3s;
-				}
-				&:before {
-					margin-top: -6px;
-					transform: translateY(-50%) rotate(42deg);
-				}
-				&:after {
-					transform: translateY(-50%) rotate(-42deg);
-				}
+	}
+
+	@media screen and (max-width: $tabwidth) {
+		.ctaButton {
+			position: relative;
+			right: 10px;
+			margin-top: 30px;
+			text-align: center;
+		}
+		&:after {
+			display: none;
+		}
+		.left {
+			width: 100%;
+			padding-right: 0;
+		}
+		.row-2-content {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+}
+
+.home-row-3  {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@include desk {
+		padding-top: 140px;
+		padding-bottom: 140px;
+	}
+	.col-gallery,
+	.col-description {
+		width: 100%;
+	}
+	.flexwrap {
+		@include flexgroup();
+		@include flexbox-align-content(center);
+		@include flexbox-justify(center);
+	}
+	.col-description {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin: 30px 0;
+		@include tab {
+			margin: 0 0;
+			@include flexgroup-center();
+		}
+	}
+	&.half {
+		.col-gallery {
+			width: 100%;
+			@include tab {
+				width: 40%;
+				padding-right: 0;
 			}
-			&:hover {
-				background: $secondary;
-				.arrow {
-					&:before,&:after {
-						background: #FFF;
-					}
-				}
-				
+			@include mid {
+				padding-right: 3vw;
+			}
+		}
+		.col-description {
+			width: 100%;
+			@include tab {
+				width: 60%;
+				padding-left: 3vw;
+				padding-right: 18vw;
 			}
 		}
 	}
-	@media screen and (max-width:670px) {
+	.gallery-inner {
+		@include flexgroup();
+		margin-left: 0;
+		@include tab {
+			margin-left: -10px;
+		}
+	}
+	.imagebox {
+		position: relative;
+		width: 100%;
+		padding: 10px;
+		overflow: hidden;
 
+		&.even {
+			@include tab {
+				width: 50%;
+			}
+			@include mid {
+				width: 40%;
+			}
+		}
+		&.odd {
+			@include tab {
+				width: 50%;
+			}
+			@include mid {
+				width: 60%;
+			}
+		}
+		.pad {
+			padding: 10px;
+			position: relative;
+			float: left;
+			width: 100%;
+		}
+	}
+	.bg {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	img.placeholder {
+		width: auto;
+		height: 150px;
+		float: left;
+		@include xs {
+			height: 100px;
+		}
+		@include mid {
+			height: 200px;
+		}
+	}
+	.count-1 {
+		.imagebox {
+			width: 100%!important;
+		}
+	}
+	.ctaButton {
+		margin-top: 40px;
+		@include mid {
+			margin-top: 8vh;
+		}
+	}
+	@media screen and (max-width: $tabwidth) {
+		img.placeholder {
+			height: 20vh;
+		}
+	}
+}
+
+.home-row-4 {
+	background: $primary;
+	color: #FFF;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@include desk {
+		padding-top: 100px;
+		padding-bottom: 120px;
+	}
+	.col-title {
+		&:after {
+			width: 10%;
+			margin: 30px auto 0;
+		}
+	}
+	.col-text {
+		font-size: 20px;
+		font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 40px;
+	}
+	.features-info {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		@include mid {
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+		.flexwrap {
+			@include flexgroup();
+		}
+	}
+	.feature {
+		width: 100%;
+		text-align: center;
+		@include tab {
+			width: 33.33%;
+		}
+		.icon {
+			text-align: center;
+			margin-bottom: 25px;
+			span {
+				display: inline-block;
+				width: 60px;
+				height: 80px;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+		.h3 {
+			font-family: $font_secondary;
+			font-size: 25px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin: 0 0 15px;
+		}
+		.text {
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 1.5;
+		}
+		.pad {
+			padding: 20px;
+		}
+	}
+	.ctaButton {
+		margin-top: 40px;
+	}
+	.btn-theme.white {
+		border: 1px solid #FFF;
+		&:hover {
+			border-color: $secondary;
+		}
+	}
+}
+
+.home-row-5 {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@include desk {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+	.inner {
+		background: $light-gray;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		position: relative;
+		border-bottom: 3px solid $secondary;
+		@include flexgroup();
+		@include tab {
+			padding-top: 70px;
+			padding-bottom: 70px;
+			&:before {
+				content:"";
+				display: block;
+				width: 5vw;
+				height: 110%;
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				background: #FFF;
+			}
+		}
+	}
+	.imagecol,
+	.textcol {
+		width: 100%;
+		position: relative;
+		z-index: 10;
+	}
+
+	&.half {
+		.imagecol {
+			width: 100%;
+			padding: 15px 30px 30px;
+			@include xs {
+				padding: 0 0;
+				width: 30%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.textcol {
+			width: 100%;
+			padding:0 30px 30px;
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 1.5;
+			@include xs {
+				width: 70%;
+				padding: 0 4vw;
+			}
+		}
+	}
+	.ctaButton {
+		margin-top: 30px;
+		@include tab {
+			margin-top: 55px;
+		}
+		.btn-theme {
+			padding-left: 50px;
+			padding-right: 70px;
+			.arrow {
+				right: 30px;
+			}
+		}
+	}
+}
+
+.home-row-6 {
+	background: $primary;
+	color: #FFF;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.col-title {
+		&:after {
+			width: 8%;
+			margin: 30px auto 0;
+		}
+	}
+	.col-text {
+		font-size: 20px;
+		font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 40px;
+	}
+	.features-info {
+		margin-top: 40px;
+		margin-bottom: 0;
+		@include mid {
+			margin-top: 80px;
+			margin-bottom: 0;
+		}
+		.flexwrap {
+			@include flexgroup();
+		}
+	}
+	.feature {
+		width: 100%;
+		text-align: center;
+		@include tab {
+			width: 33.33%;
+		}
+		.icon {
+			text-align: center;
+			margin-bottom: 25px;
+			span {
+				display: inline-block;
+				width: 60px;
+				height: 80px;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+		.h3 {
+			font-family: $font_secondary;
+			font-size: 25px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin: 0 0 15px;
+		}
+		.text {
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 1.5;
+		}
+		.pad {
+			padding: 20px;
+		}
+	}
+	.ctaButton {
+		margin-top: 40px;
+	}
+	.btn-theme.white {
+		border: 1px solid #FFF;
+		&:hover {
+			border-color: $secondary;
+		}
+	}
+}
+
+.home-row-7 {
+	padding-top: 60px;
+	padding-bottom: 70px;
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@include desk {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+	.col-title {
+		&:after {
+			width: 10%;
+			margin: 30px auto 0;
+		}
+	}
+	.col-text {
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 1.6;
+	}
+	.ctaButton {
+		margin-top: 40px;
+		@include tab {
+			margin-top: 60px;
+		}
+	}
+}
+
+/* FOOTER */
+.site-footer {
+	background: $gray;
+	color: #FFF;
+	width: 100%;
+	float: left;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	.footer-inner {
+		@include flexbox();
+		@include flexbox-align-items(center);
+		@include flexbox-justify(center);
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.footer-contact {
+		position: relative;
+		right: 0;
+		@include tab {
+			right: -20px;
+		}
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: #FFF;
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+	.foot-col {
+		display: inline-block;
+		float: left;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.footer-logo {
+		display: inline-block;
+		width: 140px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	span.divider {
+		display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: #FFF;
+    position: relative;
+    top: 3px;
+    margin: 0 10px;
 	}
 }
