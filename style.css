@@ -6847,9 +6847,9 @@ body {
   z-index: 1000;
   width: 330px;
   height: 100%;
-  -webkit-transform: translateX(350px);
-      -ms-transform: translateX(350px);
-          transform: translateX(350px); }
+  -webkit-transform: translateX(400px);
+      -ms-transform: translateX(400px);
+          transform: translateX(400px); }
   #mobile-navigation #primary-mobile-menu {
     background: #FFF;
     overflow-x: hidden;
