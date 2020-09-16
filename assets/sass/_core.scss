@@ -178,6 +178,7 @@ body {
 	left: 0;
 	padding: 0 20px;
 	height: 0;
+	opacity: 0;
 	overflow: hidden;
 	li {
 		background: $secondary;
@@ -207,6 +208,7 @@ body {
 .main-navigation ul > li:hover > ul {
 	height: auto;
 	overflow: visible;
+	opacity: 1;
 	padding: 5px 20px;
 }	
 .menu-toggle {
