@@ -168,13 +168,13 @@
 			<div class="wrapper">
 				<div class="inner">
 					<?php if ($section_5_image) { ?>
-					<div class="imagecol">
+					<div class="imagecol fadeInLeft wow" data-wow-delay="0.7s">
 						<img src="<?php echo $section_5_image['url'] ?>" alt="<?php echo $section_5_image['title'] ?>" />
 					</div>	
 					<?php } ?>
 
 					<?php if ( $section_5_title || $section_5_description ) { ?>
-					<div class="textcol">
+					<div class="textcol fadeIn wow" data-wow-delay="0.6s">
 						<?php if ($section_5_title) { ?>
 							<h2 class="col-title"><?php echo $section_5_title ?></h2>
 						<?php } ?>

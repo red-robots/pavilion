@@ -40,6 +40,18 @@ jQuery(document).ready(function ($) {
  //    });
  //  });
 
+ 	/* Sticky Navigation */
+	$(window).scroll(function() {
+	  var header = $(document).scrollTop();
+	  var headerHeight = $("#masthead").outerHeight();
+	  if (header > headerHeight) {
+	    $("#masthead").addClass("fixed");
+	  } else {
+	    $("#masthead").removeClass("fixed");
+	  }
+	});
+
+
 
     /* Smooth Scroll */
     $('a[href*="#"]')
@@ -86,9 +98,16 @@ jQuery(document).ready(function ($) {
 	new WOW().init();
 
 
-	$(document).on("click","#toggleMenu",function(){
+	$(document).on("click",".menu-toggle",function(e){
+		e.preventDefault();
 		$(this).toggleClass('open');
 		$('body').toggleClass('open-mobile-menu');
 	});
+	$(document).on("click","#closeMobileMenu, #mobile-menu-backdrop",function(e){
+		e.preventDefault();
+		$(this).removeClass('open');
+		$('body').removeClass('open-mobile-menu');
+	});
+
 
 });// END #####################################    END

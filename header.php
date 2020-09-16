@@ -14,7 +14,7 @@
 <div id="mobile-menu-backdrop"></div>
 <div id="mobile-navigation">
 	<a href="#" id="closeMobileMenu"><span class="sr">Close</span></a>
-	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-mobile-menu', 'menu_class'=>'mobile-menu','container'=>false ) ); ?>
+	<div class="mobile-inner"><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-mobile-menu', 'menu_class'=>'mobile-menu','container'=>false ) ); ?></div>
 </div>
 
 <div id="page" class="site cf">
@@ -33,9 +33,12 @@
 	          </h1>
 	      <?php } ?>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','link_before'=>'<span>','link_after'=>'</span>','container'=>false) ); ?>
 				</nav><!-- #site-navigation -->
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="sr"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></span>
+					<span class="bar"></span>
+				</button>
 			</div>
 	</div><!-- wrapper -->
 	</header><!-- #masthead -->
