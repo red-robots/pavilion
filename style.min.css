@@ -1803,7 +1803,7 @@ body{font-family:"Montserrat",sans-serif;font-size:15px;line-height:1.4;color:#1
 .menu-toggle{display:none}
 #mobile-menu-backdrop,#mobile-navigation{display:none;-webkit-transition:all ease .3s;transition:all ease .3s;-webkit-transition-delay:.1s;transition-delay:.1s;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 #mobile-menu-backdrop{position:fixed;top:0;left:0;z-index:1000;width:100%;height:100%;overflow:hidden;background:rgba(0,0,0,0.85)}
-#mobile-navigation{position:fixed;top:0;right:0;z-index:1000;width:300px;height:100%;-webkit-transform:translateX(350px);-ms-transform:translateX(350px);transform:translateX(350px)}
+#mobile-navigation{position:fixed;top:0;right:0;z-index:1000;width:330px;height:100%;-webkit-transform:translateX(350px);-ms-transform:translateX(350px);transform:translateX(350px)}
 #mobile-navigation #primary-mobile-menu{background:#FFF;overflow-x:hidden;overflow-y:auto;width:100%;height:100%}
 #mobile-navigation .mobile-inner{width:100%;height:100%;position:relative}
 #closeMobileMenu{display:block;width:30px;height:40px;background:transparent;position:absolute;top:40px;left:-50px;cursor:pointer}
