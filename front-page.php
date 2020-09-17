@@ -17,7 +17,7 @@
 							<h2 class="col-title"><?php echo $section_2_title ?></h2>
 						<?php } ?>
 						<?php if ($section_2_description) { ?>
-							<div class="text"><?php echo $section_2_description ?></div>
+							<div class="text font18"><?php echo $section_2_description ?></div>
 						<?php } ?>
 					</div>
 					<!-- <div class="right">&nbsp;</div> -->
@@ -77,7 +77,7 @@
 								<h2 class="col-title"><?php echo $section_3_title ?></h2>
 							<?php } ?>
 							<?php if ($section_3_description) { ?>
-								<div class="col-text"><?php echo $section_3_description ?></div>
+								<div class="col-text font18"><?php echo $section_3_description ?></div>
 							<?php } ?>
 							
 							<?php if ($section_3_link_text && $section_3_link_url) { ?>
@@ -110,7 +110,7 @@
 						<h2 class="col-title"><?php echo $section_4_title ?></h2>
 					<?php } ?>
 					<?php if ($section_4_description) { ?>
-						<div class="col-text"><?php echo $section_4_description ?></div>
+						<div class="col-text font18"><?php echo $section_4_description ?></div>
 					<?php } ?>
 				</div>
 
@@ -134,7 +134,7 @@
 											<?php } ?>
 
 											<?php if ($text) { ?>
-											<div class="text"><?php echo $text ?></div>
+											<div class="text font18"><?php echo $text ?></div>
 											<?php } ?>
 										</div>
 									</div>
@@ -179,7 +179,7 @@
 							<h2 class="col-title"><?php echo $section_5_title ?></h2>
 						<?php } ?>
 						<?php if ($section_5_description) { ?>
-							<div class="col-text"><?php echo $section_5_description ?></div>
+							<div class="col-text font18"><?php echo $section_5_description ?></div>
 						<?php } ?>
 
 						<?php if ($section_5_link_text && $section_5_link_url) { ?>
@@ -211,7 +211,7 @@
 						<h2 class="col-title"><?php echo $section_6_title ?></h2>
 					<?php } ?>
 					<?php if ($section_6_description) { ?>
-						<div class="col-text"><?php echo $section_6_description ?></div>
+						<div class="col-text font18"><?php echo $section_6_description ?></div>
 					<?php } ?>
 				</div>
 
@@ -265,7 +265,7 @@
 					<?php } ?>
 
 					<?php if ($section_7_description) { ?>
-						<div class="col-text"><?php echo $section_7_description ?></div>
+						<div class="col-text font18"><?php echo $section_7_description ?></div>
 					<?php } ?>
 
 					<?php if ($section_7_link_text && $section_7_url) { ?>

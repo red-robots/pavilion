@@ -434,6 +434,14 @@ body {
 	#closeMobileMenu:after {
 		top: 0;
 	}
+	body.logged-in.admin-bar {
+		#mobile-navigation .mobile-inner {
+			padding-top: 50px;
+		}
+		#closeMobileMenu {
+			top: 70px;
+		}
+	}
 }
 
 
@@ -572,6 +580,7 @@ body {
 		}
 	}
 }
+
 #slideshow {
 	.swiper-slide.swiper-slide-active {
 		.slideMid {
@@ -659,6 +668,89 @@ body {
 			}
 		}
 
+	}
+}
+
+.subpage-banner {
+	width: 100%;
+	float: left;
+	position: relative;
+	overflow:hidden;
+	height: 340px;
+	background-color: $primary;
+	@include tab {
+		height: 500px;
+	}
+	@include mid {
+		height: 650px;
+	}
+	.slideImage {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.slideCaption {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		.text {
+			width: 60%;
+			height: 100%;
+			padding: 5vw;
+			background: rgba($primary,0.92);
+			@include flexgroup-center();
+			@include tab {
+				width: 40%;
+			}
+		}
+		.inner {
+			width: 100%;
+		}
+	}
+	.slideTitle {
+		margin: 0 0 25px;
+		font-family: $font_secondary;
+		font-size: 25px;
+		font-weight: 400;
+		line-height: 1.2;
+		color: #FFF;
+		position: relative;
+		@include tab {
+			font-size: 45px;
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 18%;
+			height: 2px;
+			margin-top: 15px;
+			background: $secondary;
+		}
+		.small {
+			font-size: 18px;
+			line-height: 1.1;
+			text-transform: uppercase;
+			color: $secondary;
+			display: block;
+			width: 100%;
+			margin-bottom: 10px;
+			@include tab {
+				font-size: 25px;
+			}
+		}
+	}
+	.slideText {
+		color: #FFF;
+		font-size: 14px;
+		line-height: 1.5;
+		@include tab {
+			font-size: 18px;
+		}
 	}
 }
 
@@ -761,8 +853,6 @@ body {
 		}
 		.text {
 			position: relative;
-			font-size: 20px;
-			line-height: 1.5;
 		}
 	}
 	.right {
@@ -955,9 +1045,6 @@ body {
 		}
 	}
 	.col-text {
-		font-size: 20px;
-		font-weight: 300;
-    line-height: 1.6;
     margin-bottom: 40px;
 	}
 	.features-info {
@@ -997,9 +1084,9 @@ body {
 			margin: 0 0 15px;
 		}
 		.text {
-			font-size: 18px;
-			font-weight: 300;
-			line-height: 1.5;
+			// font-size: 18px;
+			// font-weight: 300;
+			// line-height: 1.5;
 		}
 		.pad {
 			padding: 20px;
@@ -1072,9 +1159,6 @@ body {
 		.textcol {
 			width: 100%;
 			padding:0 30px 30px;
-			font-size: 18px;
-			font-weight: 300;
-			line-height: 1.5;
 			@include xs {
 				width: 70%;
 				padding: 0 4vw;
@@ -1112,9 +1196,6 @@ body {
 		}
 	}
 	.col-text {
-		font-size: 20px;
-		font-weight: 300;
-    line-height: 1.6;
     margin-bottom: 40px;
 	}
 	.features-info {
@@ -1190,11 +1271,6 @@ body {
 			margin: 30px auto 0;
 		}
 	}
-	.col-text {
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 1.6;
-	}
 	.ctaButton {
 		margin-top: 40px;
 		@include tab {
@@ -1217,6 +1293,10 @@ body {
 		line-height: 1.2;
 		margin: 0 0 30px;
 	}
+}
+.font18 {
+	font-size: 18px;
+	line-height: 1.6;
 }
 
 /* FOOTER */
