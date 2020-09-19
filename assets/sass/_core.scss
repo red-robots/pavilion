@@ -1450,6 +1450,9 @@ body {
 		width: 100%;
 		float: left;
 		@include tab {
+			width: 55%;
+		}
+		@include desk {
 			width: 65%;
 		}
 	}
@@ -1464,9 +1467,12 @@ body {
 			@include tab {
 				position: absolute;
 				bottom: 20px;
-				right: -5vw;
+				right: 5vw;
 				width: 30%;
 				margin-top: 0;
+			}
+			@include desk {
+				right: -5vw;
 			}
 		}
 	}
