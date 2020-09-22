@@ -2063,7 +2063,8 @@ body.logged-in.admin-bar #closeMobileMenu{top:70px}
 .centered-text{padding-top:50px;padding-bottom:50px}
 @media(min-width:820px){.centered-text{padding-top:100px;padding-bottom:100px}
 }@media(min-width:1200px){.centered-text{padding-top:100px;padding-bottom:120px}
-}@media(min-width:820px){.timeline{padding-top:100px;padding-bottom:100px}
+}.timeline{padding-top:50px;padding-bottom:50px}
+@media(min-width:820px){.timeline{padding-top:100px;padding-bottom:100px}
 }@media(min-width:1200px){.timeline{padding-top:130px;padding-bottom:140px}
 }.timeline .history{width:100%;position:relative;z-index:15;overflow:hidden;float:left}
 @media(min-width:820px){.timeline .history{width:50%}
@@ -2085,6 +2086,7 @@ body.logged-in.admin-bar #closeMobileMenu{top:70px}
 }.timeline .text p{margin:0 0 20px}
 .timeline .text p:last-child{margin-bottom:0}
 @media(min-width:820px){.timeline .history:nth-child(odd) .text:after{content:"";display:block;width:30px;height:30px;background:#15284b;border-radius:100px;position:absolute;top:-17px;right:-15px}
+}@media(min-width:820px){.timeline .history:nth-child(odd) .text{padding-right:5vw}
 }.timeline .history:nth-child(even){margin-top:0}
 @media(min-width:820px){.timeline .history:nth-child(even){padding-top:80px;margin-top:10%;left:-2px}
 .timeline .history:nth-child(even) .text:after{content:"";display:block;width:30px;height:30px;background:#15284b;border-radius:100px;position:absolute;top:-17px;left:-15px}
