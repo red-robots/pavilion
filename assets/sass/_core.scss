@@ -1305,16 +1305,16 @@ body {
 }
 
 .intro, .centered-text {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 	background: $light-gray;
 	@include tab {
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}
 	@include desk {
-		padding-top: 100px;
-		padding-bottom: 100px;
+		padding-top: 120px;
+		padding-bottom: 120px;
 	}
 	h2 {
 		font-family: $font_secondary;
@@ -1329,7 +1329,7 @@ body {
 		&:after {
 			content:"";
 			display: block;
-			width: 12%;
+			width: 7vw;
 			height: 2px;
 			background: $secondary;
 			margin: 20px auto 0;
@@ -1576,6 +1576,222 @@ body {
 	@include desk {
 		padding-top: 100px;
 		padding-bottom: 120px;
+	}
+}
+
+.timeline {
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@include desk {
+		padding-top: 130px;
+		padding-bottom: 140px;
+	}
+	.history {
+		width: 100%;
+		position: relative;
+		z-index: 15;
+		overflow: hidden;
+		float: left;
+		@include tab {
+			width: 50%;
+		}
+	}
+	.h-title {
+		position: relative;
+		width: 100%;
+		float: left;
+		padding-bottom: 10px;
+		@include flexbox();
+		@include flexbox-align-items(flex-end);
+		@include tab {
+			@include flexbox();
+			@include flexbox-align-items(flex-end);
+		}
+	}
+	.titlediv {
+		position: relative;
+		.t1 {
+			display: inline-block;
+		}
+	}
+	.year {
+		font-family: $font_secondary;
+		font-size: 40px;
+		font-weight: 400;
+		line-height: 1;
+		color: $primary;
+		@include tab {
+			font-size: 50px;
+		}
+	}
+	.location {
+		font-size: 18px;
+		font-weight: 400;
+		color: $gray;
+		@include tab {
+			font-size: 20px;
+		}
+	}
+	.icon {
+		display: inline-block;
+		position: relative;
+		width: 200px;
+		height: 65px;
+		bottom: -10px;
+		margin-left: 20px;
+		@include tab {
+			bottom: -10px;
+			height: 90px;
+			margin-left: 0;
+		}
+		img {
+			width: auto;
+			height: 100%;
+		}
+		span {
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-size: contain;
+			background-position: left bottom;
+			background-repeat: no-repeat;
+			@include tab {
+				background-position: bottom center;
+			}
+		}
+	}
+	.text {
+		width: 100%;
+		float: left;
+		position: relative;
+		@include tab {
+  		border-top: 2px solid $secondary;
+  		padding-top: 20px;
+  	}
+		p {
+			margin: 0 0 20px;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.history:nth-child(odd) {
+		@include tab {
+			.text {
+				&:after {
+					content:"";
+					display: block;
+					width: 30px;
+					height: 30px;
+					background: $primary;
+					border-radius: 100px;
+					position: absolute;
+					top: -17px;
+					right: -15px;
+				}
+			}
+		}
+	}
+
+	.history:nth-child(even) {
+		margin-top: 0;
+		@include tab {
+			padding-top: 80px;
+			margin-top: 10%;
+			left: -2px;
+			.text {
+				&:after {
+					content:"";
+					display: block;
+					width: 30px;
+					height: 30px;
+					background: $primary;
+					border-radius: 100px;
+					position: absolute;
+					top: -17px;
+					left: -15px;
+				}
+			}
+		}
+		.h-title {
+			@include tab {
+				padding-left: 5vw;
+			}
+		}
+
+		.text {
+			@include tab {
+				padding-left: 5vw;
+			}
+		}
+	}
+
+	.inner-pad {
+		position: relative;
+		@include tab {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+	.middle-line {
+		@include tab {
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-right: 2px solid $secondary;
+			&:before {
+				content:"";
+				display: block;
+				width: 7vw;
+				border-bottom: 2px solid $secondary;
+				position: absolute;
+				top: 0;
+				right: 0;
+				margin-right: -3.5vw;
+				margin-top: -1.2vw;
+			}
+			.arrow-down {
+				display: inline-block;
+				width: 4vw;
+				height: 2px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				margin-right: -2vw;
+				margin-bottom: -1.2vw;
+				&:before, &:after {
+					content:"";
+					display: block;
+					width: 100%;
+					height: 100%;
+					background: $secondary;
+					position: relative;
+				}
+				&:before {
+					transform: translateX(-23px) rotate(45deg);
+					top: 2px;
+				}
+				&:after {
+					transform: translateX(23px) rotate(-45deg);
+					left: -1px;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $tabwidth - 1px) {
+		.history {
+			padding-bottom: 30px;
+    	padding-top: 30px;
+    	.h-title {
+    		border-bottom: 2px solid $secondary;
+    		margin-bottom: 15px;
+    	}
+		}
 	}
 }
 
