@@ -25,6 +25,14 @@ jQuery(document).ready(function ($) {
 		},
   });
 
+
+  $(".slideMoreBtn").on("click",function(e){
+  	e.preventDefault();
+  	$(".subpage-banner").toggleClass('show-details');
+  	$(".slideCaption").toggleClass("animated fadeIn");
+  	$("body").toggleClass("slide-text-open");
+  });
+
 	// swiper.on('onSlideChangeEnd', function (realIndex) {
  //    // if( $('.swiper-slide.swiper-slide-active').length>0 ) {
  //    // 	if( $('.swiper-slide.swiper-slide-active').find(".slideInside").length>0 ) {

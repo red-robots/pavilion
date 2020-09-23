@@ -2,6 +2,7 @@
 	$banner = get_field("section_1_image");
 	$banner_title_large = get_field("section_1_tagline");
 	$banner_description = get_field("section_1_description");
+	$section_1_excerpt = get_field("section_1_excerpt");
 	if($banner) { ?>
 	<div class="subpage-banner">
 		<div class="slideImage" style="background-image:url('<?php echo $banner['url']?>');"></div>
@@ -19,9 +20,31 @@
 							<?php } ?>
 						</h2>	
 						<?php } ?>
-						<?php if ($banner_description) { ?>
-						<div class="slideText"><?php echo $banner_description ?></div>	
+
+						<?php if ($section_1_excerpt && $banner_description) { ?>
+						<div class="slideText">
+								<div class="excerpt">
+									<?php echo $section_1_excerpt ?>
+								</div>
+								
+								<div class="moreBtnDiv"><a href="#" class="slideMoreBtn">Read More</a></div>
+
+								<div class="full-info hide">
+									<?php echo $banner_description ?>
+								</div>
+						</div>			
+						<?php } else { ?>
+
+							<?php if ($section_1_excerpt) { ?>
+								<div class="slideText"><?php echo $section_1_excerpt ?></div>
+							<?php } ?>
+
+							<?php if ($banner_description) { ?>
+								<div class="slideText"><?php echo $banner_description ?></div>
+							<?php } ?>
+
 						<?php } ?>
+
 					</div>
 				</div>
 

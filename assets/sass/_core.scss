@@ -592,6 +592,27 @@ body {
 	}
 }
 
+.moreBtnDiv {
+	margin-top: 2vw;
+}
+.slideMoreBtn {
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	border: 1px solid #FFF;
+	padding: 5px 20px;
+	color: #FFF;
+	font-size: 10px;
+	@include tab {
+		font-size: 15px;
+	}
+	&:hover {
+		border-color: $secondary;
+		background: $secondary;
+		color: #FFF;
+	}
+}
+
 .hero-video-wrap {
 	width: 100%;
 	float: left;
@@ -677,7 +698,7 @@ body {
 	float: left;
 	position: relative;
 	overflow:hidden;
-	height: 340px;
+	height: 380px;
 	background-color: $primary;
 	@include tab {
 		height: 500px;
@@ -699,18 +720,30 @@ body {
 		position: absolute;
 		top: 0;
 		left: 0;
+		transition: all ease .3s;
 		.text {
 			width: 60%;
 			height: 100%;
 			padding: 5vw;
+			transition: all ease .3s;
 			background: rgba($primary,0.92);
 			@include flexgroup-center();
 			@include tab {
+				width: 60%;
+			}
+			@include mid {
+				width: 50%;
+			}
+			@include desk {
 				width: 40%;
 			}
 		}
 		.inner {
 			width: 100%;
+		}
+		.full-info {
+			display: none;
+			@include animated(1s);
 		}
 	}
 	.slideTitle {
@@ -753,8 +786,77 @@ body {
 			font-size: 18px;
 		}
 	}
+	&.show-details {
+		z-index: 510;
+		.slideCaption {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			.text {
+				width: 100%;
+				height: 100%;
+				background: rgba(21, 40, 75, 0.98);
+				overflow-x: hidden;
+				overflow-y: auto;
+				padding: 60px 10vw;
+			}
+			.excerpt {
+				display: none;
+			}
+			.full-info {
+				display: block;
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+				animation-delay: 0.4s;
+			}
+		}
+		.moreBtnDiv {
+			display: block;
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+		}
+		.slideMoreBtn {
+			width: 100%;
+			height: 100%;
+			padding:0 0;
+			text-indent: -99em;
+			overflow: hidden;
+			border: none;
+			&:before, &:after {
+				content:"";
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #FFF;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transition: all ease .3s;
+			}
+			&:before {
+				transform: rotate(45deg);
+			}
+			&:after {
+				transform: rotate(-45deg);
+			}
+			&:hover {
+				background: transparent;
+				&:before, &:after {
+					background: $secondary;
+				}
+			}
+		}
+	}
 }
-
+body.slide-text-open {
+	overflow: hidden;
+}
 #content
 .content-area-full {
 	width: 100%;
@@ -1315,6 +1417,9 @@ body {
 	@include desk {
 		padding-top: 120px;
 		padding-bottom: 120px;
+	}
+	&.whiteBg {
+		background: #FFF;
 	}
 	h2 {
 		font-family: $font_secondary;

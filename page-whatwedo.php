@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About
+ * Template Name: What We Do
  */
 
 get_header(); ?>
@@ -11,34 +11,6 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
 			
-			<?php
-			$section_2_title = get_field("section_2_title");
-			$section_2_description = get_field("section_2_description");
-			$section_2_link_text = get_field("section_2_link_text");
-			$section_2_link_url = get_field("section_2_link_url");
-			?>
-			<?php if ( $section_2_title || $section_2_description ) { ?>
-				<div class="intro text-center font18">
-					<div class="wrapper">
-						<div class="wrapper-narrow">
-							<?php if ($section_2_title) { ?>
-								<h2 class="intro-title"><?php echo $section_2_title ?></h2>
-							<?php } ?>
-							<?php if ($section_2_description) { ?>
-								<div class="intro-text font18"><?php echo $section_2_description ?></div>
-							<?php } ?>
-
-							<?php if ($section_2_link_text && $section_2_link_url) { ?>
-								<div class="intro-button">
-									<a href="<?php echo $section_2_link_url ?>" class="btn-theme wide"><?php echo $section_2_link_text ?><span class="arrow"></span></a>
-								</div>
-							<?php } ?>
-
-						</div>
-					</div>
-				</div>	
-			<?php } ?>
-
 
 			<?php
 			$section_3_title = get_field("section_3_title");
@@ -186,7 +158,7 @@ get_header(); ?>
 			$section_6_url = get_field("section_6_url");
 			?>
 			<?php if ( $section_6_title || $section_6_description ) { ?>
-				<div class="centered-text text-center fw-left font18">
+				<div class="centered-text whiteBg text-center fw-left font18">
 					<div class="wrapper">
 						<div class="wrapper-narrow">
 							<?php if ($section_6_title) { ?>
