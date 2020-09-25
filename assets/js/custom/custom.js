@@ -97,6 +97,34 @@ jQuery(document).ready(function ($) {
 	    }
 	});
 	
+	if( $(".categories-tabs a").length>0 ) {
+		var catLinks = $(".categories-tabs").html();
+		$(".cattabs").html(catLinks);
+		$(document).on("click",".cattabs a.active",function(e){
+			e.preventDefault();
+			$(".cattabs a").not(".active").toggleClass('show');
+		});
+		$(document).on("click",".cattabs a",function(e){
+			e.preventDefault();
+			if( $(this).hasClass('active') ) {
+
+			} else {
+				var catLink = $(this).attr("href");
+				$(".cattabs a.active").removeClass("active");
+				$(".cattabs a").removeClass('show');
+				$(this).removeClass('show');
+				$(this).addClass("active");
+				window.history.replaceState('',document.title,catLink);
+				$(".team-list").load(catLink + " .team-data",function(){
+
+				});
+			}
+			
+			// $(".cattabs a").removeClass("active show");
+			// $(this).toggleClass('active show');
+		});
+	}
+
 
 	/*
 	*

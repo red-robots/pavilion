@@ -17,7 +17,7 @@ function js_custom_init() {
             'supports'  => array('title','editor')
         ),
         array(
-            'post_type' => 'teams',
+            'post_type' => 'team',
             'menu_name' => 'Teams',
             'plural'    => 'Teams',
             'single'    => 'Team',
@@ -94,8 +94,8 @@ add_action( 'init', 'ii_custom_taxonomies', 0 );
 function ii_custom_taxonomies() {
         $posts = array(
             array(
-                'post_type' => 'teams',
-                'menu_name' => 'Team Groups',
+                'post_type' => 'team',
+                'menu_name' => 'Team Group',
                 'plural'    => 'Team Groups',
                 'single'    => 'Team Group',
                 'taxonomy'  => 'team-groups',
@@ -151,7 +151,7 @@ function set_custom_cpt_columns($columns) {
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
     
-    if($post_type=='teams') {
+    if($post_type=='team') {
         unset( $columns['taxonomy-team-groups'] );
         unset( $columns['title'] );
         unset( $columns['date'] );
@@ -171,7 +171,7 @@ function custom_post_column( $column, $post_id ) {
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
-    if($post_type=='teams') {
+    if($post_type=='team') {
         switch ( $column ) {
             case 'jobtitle' :
                 $jobtitle = get_field("jobtitle",$post_id);
@@ -179,7 +179,7 @@ function custom_post_column( $column, $post_id ) {
                 break;
 
             case 'photo' :
-                $img = get_field('image',$post_id);
+                $img = get_field('photo',$post_id);
                 $img_src = ($img) ? $img['sizes']['medium'] : '';
                 $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;border:1px solid #CCC;overflow:hidden;">';
                 if($img_src) {
@@ -194,3 +194,4 @@ function custom_post_column( $column, $post_id ) {
     }
     
 }
+

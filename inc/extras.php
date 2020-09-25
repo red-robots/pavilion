@@ -223,4 +223,16 @@ function parse_external_url( $url = '', $internal_class = 'internal-link', $exte
 }
 
 
+add_action( 'load-page.php', 'hide_tinyeditor_wp' );
+function hide_tinyeditor_wp() {
+    if( !isset( $_GET['post'] ) )
+        return;
+
+    $pages = get_field("hide_default_wp_editor","option");
+    if($pages) {
+        if( in_array($_GET['post'], $pages) ) {
+            remove_post_type_support('page', 'editor');
+        }
+    }
+}
 
