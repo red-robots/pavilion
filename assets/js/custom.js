@@ -119,11 +119,17 @@ jQuery(document).ready(function ($) {
 
 				});
 			}
-			
-			// $(".cattabs a").removeClass("active show");
-			// $(this).toggleClass('active show');
 		});
 	}
+
+	$(".categories-tabs a").on("click",function(e){
+		e.preventDefault();
+		var catLink = $(this).attr("href");
+		window.history.replaceState('',document.title,catLink);
+		$(".team-list").load(catLink + " .team-data",function(){
+
+		});
+	});
 
 
 	/*
