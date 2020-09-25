@@ -56,8 +56,8 @@ $exclude_teams = get_field("exclude_from_the_list",$pageId);
               <?php } ?>
           </div>
         </div>
-        <div class="cat-tabs-mobile"><div class="cattabs"></div></div>
       </div>  
+      <div class="cat-tabs-mobile"><div class="cattabs"></div></div>
       <?php } ?>
 
       <div class="team-list fw-left">

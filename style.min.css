@@ -2169,12 +2169,14 @@ body.slide-text-open{overflow:hidden}
 .categories-tabs{display:none}
 @media(min-width:820px){.categories-tabs{display:block}
 }.team-posts .team-categories,.cat-tabs-mobile{display:block;position:relative;margin-bottom:30px;z-index:20}
-@media(min-width:820px){.team-posts .team-categories,.cat-tabs-mobile{display:none}
-}.team-posts .team-categories .cattabs,.cat-tabs-mobile .cattabs{width:100%;position:absolute;top:0;left:0;text-align:center;padding:0 35px}
+.team-posts .team-categories .cattabs,.cat-tabs-mobile .cattabs{width:100%;position:absolute;top:0;left:0;text-align:center;padding:0 35px}
 .team-posts .team-categories .cattabs:after,.cat-tabs-mobile .cattabs:after{content:"";display:inline-block;width:0;height:0;border-top:8px solid #000;border-left:7px solid transparent;border-right:7px solid transparent;position:absolute;top:18px;right:52px;z-index:10}
-.team-posts .team-categories a,.cat-tabs-mobile a{display:none;width:100%;padding:10px 20px;background:#f5f5f5;position:relative;border:1px solid #e4e3e3}
-.team-posts .team-categories a.active,.team-posts .team-categories a.show,.cat-tabs-mobile a.active,.cat-tabs-mobile a.show{display:block}
-.team-posts .team-categories a.active span:after,.team-posts .team-categories a.show span:after,.cat-tabs-mobile a.active span:after,.cat-tabs-mobile a.show span:after{display:none}
+.cat-tabs-mobile{display:block;margin-bottom:65px}
+@media(min-width:820px){.cat-tabs-mobile{display:none}
+}.cat-tabs-mobile a{display:none;width:100%;padding:10px 20px;background:#f5f5f5;position:relative;border:1px solid #e4e3e3;font-size:18px;font-weight:400;line-height:1.2;color:#15284b;text-transform:uppercase;padding:10px 20px;text-decoration:none}
+.cat-tabs-mobile a.active{color:#cd9700}
+.cat-tabs-mobile a.active,.cat-tabs-mobile a.show{display:block}
+.cat-tabs-mobile a.active span:after,.cat-tabs-mobile a.show span:after{display:none}
 .site-footer{background:#7d8491;color:#FFF;width:100%;float:left;padding-top:20px;padding-bottom:15px}
 .site-footer .footer-inner{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-20px;margin-right:-20px}
 .site-footer .footer-contact{position:relative;right:0}
