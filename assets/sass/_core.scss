@@ -708,7 +708,7 @@ body {
 	float: left;
 	position: relative;
 	overflow:hidden;
-	height: 380px;
+	height: 400px;
 	background-color: $primary;
 	@include tab {
 		height: 500px;
@@ -732,7 +732,7 @@ body {
 		left: 0;
 		transition: all ease .3s;
 		.text {
-			width: 60%;
+			width: 70%;
 			height: 100%;
 			padding: 5vw;
 			transition: all ease .3s;
@@ -1459,6 +1459,14 @@ body.slide-text-open {
 	}
 }
 
+.intro .page-title {
+	font-family: $font_secondary;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 1.2;
+	margin: 0 0 40px;
+}
+
 .section-3 {
 	padding-top: 50px;
 	padding-bottom: 40px;
@@ -1635,6 +1643,7 @@ body.slide-text-open {
 			margin-bottom: 25px;
 			span {
 				display: inline-block;
+				min-width: 100px;
 				width: 60px;
 				height: 80px;
 				background-size: contain;
@@ -1664,6 +1673,14 @@ body.slide-text-open {
 		&:hover {
 			border-color: $secondary;
 		}
+	}
+
+	.single-row-icon {
+		.feature {
+			width: 100%;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}	
 	}
 }
 
@@ -2195,6 +2212,11 @@ body.slide-text-open {
 		}
 	}
 }
+
+#primary.nobanner {
+
+}
+
 /* FOOTER */
 .site-footer {
 	background: $gray;
@@ -2247,5 +2269,33 @@ body.slide-text-open {
     position: relative;
     top: 3px;
     margin: 0 10px;
+	}
+	@media screen and (max-width:820px) {
+		padding-top: 30px;
+    padding-bottom: 30px;
+		.footer-inner {
+			display: block;
+		}
+		.footer-logo,
+		.footer-contact {
+			width: 100%;
+			text-align: center;
+		}
+		.footer-logo {
+			margin-bottom: 15px;
+			img {
+				width: 120px;
+    		height: auto;
+			}
+		}
+		.footer-contact {
+			font-size: 15px;
+		}
+		.footer-phone {
+			width: 100%;
+		}
+		.footer-address {
+			margin-bottom: 5px;
+		}
 	}
 }

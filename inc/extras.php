@@ -236,3 +236,14 @@ function hide_tinyeditor_wp() {
     }
 }
 
+/* ACF Custom Style for Text Editor */
+add_action('acf/input/admin_head', 'my_acf_modify_wysiwyg_height');
+function my_acf_modify_wysiwyg_height() { ?>
+    <style type="text/css">
+        .acf-field[data-name="section_1_description"] .mce-edit-area iframe,
+        .acf-field[data-name="banner_description"] .mce-edit-area iframe{
+            height: 200px !important;
+        }
+    </style>
+    <?php    
+}
