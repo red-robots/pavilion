@@ -237,12 +237,18 @@ function hide_tinyeditor_wp() {
 }
 
 /* ACF Custom Style for Text Editor */
-add_action('acf/input/admin_head', 'my_acf_modify_wysiwyg_height');
-function my_acf_modify_wysiwyg_height() { ?>
+add_action('acf/input/admin_head', 'my_acf_custom_css');
+function my_acf_custom_css() { ?>
     <style type="text/css">
         .acf-field[data-name="section_1_description"] .mce-edit-area iframe,
         .acf-field[data-name="banner_description"] .mce-edit-area iframe{
             height: 200px !important;
+        }
+        /* Gallery ACF with Website URL field */
+        .acf-field-5f6efd2db01b1 tr[data-name="caption"],
+        .acf-field-5f6efd2db01b1 tr[data-name="description"],
+        .acf-field-5f6efd2db01b1 .media-types.media-types-required-info {
+            display: none!important;
         }
     </style>
     <?php    

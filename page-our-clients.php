@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Why Pavilion
+ * Template Name: Our Clients
  */
 
 get_header(); ?>
@@ -19,44 +19,31 @@ get_header(); ?>
 
 			<?php
 			/* BLUE SECTION - Content with Icons */
-			$mid_section_title = get_field("mid_section_title");
-			$content_with_icons = get_field("content_with_icons");
-			if( $mid_section_title || $content_with_icons ) { ?>
-			<div class="section-with-icons single-row fw-left">
+			$galleries = get_field("gallery");
+			if( $galleries ) { ?>
+			<div class="gallery-sections fw-left">
 				<div class="wrapper">
-					<div class="wrapper-narrow text-center">
-						<?php if ($mid_section_title) { ?>
-							<h2 class="col-title"><?php echo $mid_section_title ?></h2>
-						<?php } ?>
-					</div>
 
-					<?php if ($content_with_icons) { ?>
-						<div class="features-info single-row-icon">
-							<div class="wrapper">
+					<?php if ($galleries) { ?>
+						<div class="galleries">
+							<div class="wrapper-narrow">
 								<div class="flexwrap">
-									<?php foreach ($content_with_icons as $s) { 
-										$icon = $s['icon'];
-										$title = $s['title'];
-										$text = $s['description'];
-										?>
-										<div class="feature">
-											<div class="pad">
-												<?php if ($icon) { ?>
-												<div class="icon"><span style="background-image:url('<?php echo $icon['url']?>')"></span></div>
-												<?php } ?>
-
-												<?php if ($title) { ?>
-												<h3 class="h3"><?php echo $title ?></h3>
-												<?php } ?>
-
-												<?php if ($text) { ?>
-												<div class="text font18"><?php echo $text ?></div>
-												<?php } ?>
+									<?php foreach ($galleries as $img) { 
+										$website = get_field("website",$img['ID']);
+										if($img) { ?>
+											<div class="imagebox">
+												<figure>
+													<?php if ($website) { ?>
+														<a href="<?php echo $website ?>" target="_blank"><span class="img"><img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>"></span></a>
+													<?php } else { ?>
+														<span class="img"><img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>"></span>
+													<?php } ?>
+												</figure>
 											</div>
-										</div>
 										<?php } ?>
-									</div>
+									<?php } ?>
 								</div>
+							</div>
 						</div>
 					<?php } ?>
 
