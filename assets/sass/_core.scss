@@ -2294,9 +2294,39 @@ body.slide-text-open {
 	}
 }
 
-#primary.nobanner {
-
+body.error404 {
+	.site-main {
+		background: $light-gray;
+		@include desk {
+			min-height: 40em;
+		}
+		.error-404 {
+			text-align: center;
+			padding-top: 15%; 
+		}
+		.inner-pad {
+			position: relative;
+			top: 50%;
+		}
+	}
+	.page-header {
+		h1.page-title {
+			font-family: $font_secondary;
+			font-size: 40px;
+			font-weight: 500;
+			line-height: 1.2;
+			margin: 0 0;
+		}
+	}
+	.page-content {
+		font-size: 18px;
+		p {
+			margin: 0 0;
+		}
+	}
 }
+
+
 
 /* FOOTER */
 .site-footer {
