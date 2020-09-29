@@ -98,8 +98,7 @@ function ii_custom_taxonomies() {
                 'menu_name' => 'Team Group',
                 'plural'    => 'Team Groups',
                 'single'    => 'Team Group',
-                'taxonomy'  => 'team-groups',
-                'rewrite'   => 'team'
+                'taxonomy'  => 'team-groups'
             ),
         );
     

@@ -32,13 +32,16 @@ get_header(); ?>
 							<?php if ($staff_details) { ?>
 								<div class="staff-details">
 									<div class="staff-title">
+										<?php if ( is_user_logged_in() ) { ?>
+										<div class="post-edit-link"><?php echo edit_post_link('Edit','','',$staff_id,'edit-link'); ?></div>
+										<?php } ?>
 										<h2 class="staff-name"><?php echo $featteam->post_title; ?></h2>
 										<?php if ($jobtitle) { ?>
 										<p class="jobtitle"><?php echo $jobtitle ?></p>
 										<?php } ?>
 									</div>
 									
-									<?php echo $staff_details ?>
+									<?php echo anti_email_spam($staff_details) ?>
 								</div>
 							<?php } ?>
 						</div>
@@ -66,7 +69,7 @@ get_header(); ?>
 								<h2 class="intro-title"><?php echo $bottom_title ?></h2>
 							<?php } ?>
 							<?php if ($bottom_text) { ?>
-								<div class="intro-text"><?php echo $bottom_text ?></div>
+								<div class="intro-text"><?php echo anti_email_spam($bottom_text) ?></div>
 							<?php } ?>
 
 							<?php if ($bottom_button) { 

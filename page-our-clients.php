@@ -11,7 +11,7 @@ get_header(); ?>
 			<?php if ( $intro = get_field("intro") ) { ?>
 				<div class="intro fw-left text-center">
 					<div class="wrapper">
-						<div class="wrapper-narrow font18"><?php echo $intro; ?></div>
+						<div class="wrapper-narrow font18"><?php echo anti_email_spam($intro); ?></div>
 					</div>
 				</div>	
 			<?php } ?>
@@ -65,7 +65,7 @@ get_header(); ?>
 				if ( $bottomText ) { ?>
 				<div class="centered-text text-center fw-left">
 					<div class="wrapper">
-						<div class="wrapper-narrow font18"><?php echo $bottomText; ?></div>
+						<div class="wrapper-narrow font18"><?php echo anti_email_spam($bottomText); ?></div>
 						<?php if ( $bottomButton ) { 
 							$bottomTarget = ( isset($bottomButton['target']) && $bottomButton['target'] ) ? $bottomButton['target'] : '_self';
 							?>

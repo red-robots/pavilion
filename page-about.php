@@ -25,7 +25,7 @@ get_header(); ?>
 								<h2 class="intro-title"><?php echo $section_2_title ?></h2>
 							<?php } ?>
 							<?php if ($section_2_description) { ?>
-								<div class="intro-text font18"><?php echo $section_2_description ?></div>
+								<div class="intro-text font18"><?php echo anti_email_spam($section_2_description) ?></div>
 							<?php } ?>
 
 							<?php if ($section_2_link_text && $section_2_link_url) { ?>
@@ -193,7 +193,7 @@ get_header(); ?>
 								<h2 class="intro-title"><?php echo $section_6_title ?></h2>
 							<?php } ?>
 							<?php if ($section_6_description) { ?>
-								<div class="intro-text"><?php echo $section_6_description ?></div>
+								<div class="intro-text"><?php echo anti_email_spam($section_6_description) ?></div>
 							<?php } ?>
 
 							<?php if ($section_6_link_text && $section_6_url) { ?>

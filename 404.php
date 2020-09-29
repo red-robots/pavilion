@@ -20,7 +20,8 @@ get_header(); ?>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
-						<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'bellaworks' ); ?></p>
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below.', 'bellaworks' ); ?></p>
+						<?php get_template_part('parts/content','sitemap'); ?>
 					</div>
 				</div>
 

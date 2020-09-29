@@ -37,7 +37,7 @@ get_header(); ?>
 										<h2 class="col-title"><?php echo $section_3_title ?></h2>
 									<?php } ?>
 									<?php if ($section_3_description) { ?>
-										<div class="sec-text"><?php echo $section_3_description ?></div>
+										<div class="sec-text"><?php echo anti_email_spam($section_3_description) ?></div>
 									<?php } ?>
 
 									<?php if ($section_3_link_text && $section_3_link_url) { ?>
@@ -78,7 +78,7 @@ get_header(); ?>
 								<?php } ?>
 
 								<?php if ($section_4_description) { ?>
-									<div class="sec-text font18"><?php echo $section_4_description ?></div>
+									<div class="sec-text font18"><?php echo anti_email_spam($section_4_description) ?></div>
 								<?php } ?>
 							</div>
 
@@ -130,7 +130,7 @@ get_header(); ?>
 												<?php } ?>
 
 												<?php if ($text) { ?>
-												<div class="text font18"><?php echo $text ?></div>
+												<div class="text font18"><?php echo anti_email_spam($text) ?></div>
 												<?php } ?>
 											</div>
 										</div>
@@ -142,7 +142,7 @@ get_header(); ?>
 
 					<?php if ($section_5_text) { ?>
 					<div class="bottom-sub-head text-center">
-						<h3 class="h3-sm"><?php echo $section_5_text ?></h3>
+						<h3 class="h3-sm"><?php echo anti_email_spam($section_5_text) ?></h3>
 					</div>
 					<?php } ?>
 
@@ -165,7 +165,7 @@ get_header(); ?>
 								<h2 class="intro-title"><?php echo $section_6_title ?></h2>
 							<?php } ?>
 							<?php if ($section_6_description) { ?>
-								<div class="intro-text"><?php echo $section_6_description ?></div>
+								<div class="intro-text"><?php echo anti_email_spam($section_6_description) ?></div>
 							<?php } ?>
 
 							<?php if ($section_6_link_text && $section_6_url) { ?>

@@ -1497,6 +1497,7 @@ body.slide-text-open {
 		@include tab {
 			width: 60%;
 			padding: 0 0;
+			padding-right: 5vw;
 		}
 		.inner {
 			width: 100%;
@@ -2302,7 +2303,7 @@ body.error404 {
 		}
 		.error-404 {
 			text-align: center;
-			padding-top: 15%; 
+			padding-top: 10%; 
 		}
 		.inner-pad {
 			position: relative;
@@ -2326,7 +2327,81 @@ body.error404 {
 	}
 }
 
+.sitemapMenu {
+	text-align: center;
+	margin-top: 30px;
+	.sitemapnav {
+		display: inline-block;
+		width: auto;
+		@include tab { 
+			max-width: 700px;
+			width: 100%;
+		}
+	}
+	ul {
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+		text-align: left;
+		li {
+			position: relative;
+		}
+	}
+	a {
+		display: inline-block;
+		color: $primary;
+		text-decoration: none;
+		&:hover {
+			color: $secondary;
+		}
+	}
+	.menu {
+  		@include tab { 
+  			column-count: 2;
+  			column-gap: 40px;
+  		}
+  		ul {
+  			margin-left: 15px;
+  		}
+  		li {
+  			padding-left: 12px;
+				&:before {
+					content:"";
+					display: block;
+					width: 5px;
+					height: 5px;
+					background: $primary;
+					position: absolute;
+					top: 11px;
+					left: 0;
+				}
+  		}
+  	ul li {
+  		&:before {
+  			border-radius: 100px;
+  			background: transparent;
+  			border: 1px solid $primary;
+  		}
+  	}
+	}
+}
 
+div.post-edit-link {
+	margin: 15px 0;
+	a {
+		display: inline-block;
+		text-decoration: none;
+		padding: 5px 10px;
+		color: $primary;
+		border: 1px solid $primary;
+		font-size: 13px;
+    line-height: 1;
+    &:hover {
+    	color: $secondary;
+    	border-color: $secondary;
+    }
+	}
+}
 
 /* FOOTER */
 .site-footer {
