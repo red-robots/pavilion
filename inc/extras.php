@@ -228,3 +228,116 @@ function my_acf_custom_css() { ?>
     </style>
     <?php    
 }
+
+
+add_shortcode( 'contact_information', 'display_contact_info' );
+function display_contact_info( $atts ) {
+
+    $atts = shortcode_atts( array(
+        'class' => '',
+        'show'=>'all'
+    ), $atts, 'contact_information' );
+
+    $custom_class = ($atts['class']) ? ' ' . $atts['class'] : '';
+    $show = ($atts['show']) ? $atts['show'] : 'all';
+
+    $address = get_field("address","option");
+    $phone = get_field("phone","option");
+    $fax = get_field("fax","option");
+    $gmap = get_field("gmap","option");
+    $options = array(
+      'address'=>$address,
+      'phone'=>$phone,
+      'fax'=>$fax,
+      'map'=>$gmap
+    );
+
+    $output = ''; 
+    $isPhNums = array('phone','fax');
+    $isEmails = array('email');
+    $placeholder = THEMEURI . 'images/map-helper.png';
+    include( locate_template('inc/icons-svg.php') );
+
+    ob_start(); ?>
+
+    <div class="contact-info-shortcode<?php echo $custom_class?>">
+
+      <?php if ($show=='all' || $show=='') { 
+
+          $phNums = array('phone','fax');
+          foreach($options as $k=>$v) { 
+          ?>
+            
+            <?php if (in_array($k,$isPhNums)) { ?>
+              <span class="sc-<?php echo $k?> ph">
+                <a href="tel:<?php echo format_phone_number($v); ?>">
+                  <i class="customicon-<?php echo $k?>"></i><?php echo $v ?>
+                </a>
+              </span>
+            <?php } else { ?>
+
+              <?php if (in_array($k, $isEmails)) { ?>
+                <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
+              <?php } else { ?>
+                <?php if ($k=='map') { ?>
+                  <span class="sc-<?php echo $k?>">
+                    <?php echo $v ?>
+                    <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="mapdivHelper">
+                  </span>
+                <?php } else { ?>
+                  <span class="sc-<?php echo $k?>"><?php echo $v ?></span>
+                <?php } ?>
+              <?php } ?>
+
+            <?php } ?>
+
+          <?php } ?>
+
+      <?php } else { ?>
+
+        <?php if ($show) {
+          $args = explode(",",$show); 
+          foreach($args as $k) { 
+            $v = ( isset($options[$k]) && $options[$k] ) ? $options[$k] :'';
+            if($v) { ?>
+
+                <?php if (in_array($k,$isPhNums)) { ?>
+                  <span class="sc-<?php echo $k?> ph">
+                    <a href="tel:<?php echo format_phone_number($v); ?>">
+                      <i class="customicon-<?php echo $k?>"></i><?php echo $v ?>
+                    </a>
+                  </span>
+                <?php } else { ?>
+
+                  <?php if (in_array($k, $isEmails)) { ?>
+                    <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
+                  <?php } else { ?>
+                    
+
+                    <?php if ($k=='map') { ?>
+                      <span class="sc-<?php echo $k?>">
+                        <?php echo $v ?>
+                        <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="mapdivHelper">
+                      </span>
+                    <?php } else { ?>
+                      <span class="sc-<?php echo $k?>"><?php echo $v ?></span>
+                    <?php } ?>
+
+                  <?php } ?>
+
+                <?php } ?>
+
+            <?php } ?>
+          <?php } ?>
+        <?php } ?>
+
+      <?php } ?>
+
+    </div>
+
+    <?php
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+

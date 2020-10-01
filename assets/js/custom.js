@@ -131,6 +131,16 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
+	/* Append custom button for gravity form */
+	if( $(".gform_footer").length>0 ) {
+		var gform_submit_button = '<a class="gformCustomBtn btn-theme white">Submit Form<span class="arrow"></span></a>';
+		$(".custom-form-button").append(gform_submit_button);
+		$(document).on("click",".gformCustomBtn",function(e){
+			e.preventDefault();
+			$('.gform_footer input[type="submit"]').trigger("click");
+		});
+	}
+
 
 	/*
 	*
