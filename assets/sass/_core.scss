@@ -2683,6 +2683,207 @@ div.post-edit-link {
 
 }
 
+/* Process */
+.process {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@include desk {
+		padding-top: 130px;
+		padding-bottom: 140px;
+	}
+	.process-info {
+		width: 100%;
+		position: relative;
+		z-index: 15;
+		float: left;
+		@include tab {
+			width: 50%;
+		}
+		h3.title {
+			font-family: $font_secondary;
+			font-size: 30px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin: 0 0 20px;
+		}
+	}
+	.text {
+		width: 100%;
+		float: left;
+		position: relative;
+		@include tab {
+  		border-top: 2px solid $secondary;
+  		padding-top: 20px;
+  	}
+		p {
+			margin: 0 0 20px;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.counter {
+		display: block;
+		width: 66px;
+		height: 66px;
+		border: 1px solid $secondary;
+		background: $primary;
+		color: #FFF;
+		border-radius: 100%;
+		position: absolute;
+		top: -33px;
+		font-family: $font_secondary;
+		font-size: 2rem;
+		line-height: 1;
+		z-index: 20;
+		i {
+			font-style: normal;
+			color: #FFF;
+			display: block;
+			width: 100%;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			margin-top: 2px;
+		}
+	}
+	.process-info:nth-child(odd) {
+		h3.title {
+			@include tab {
+				padding-right: 5vw;
+			}
+		}
+		.text {
+			@include tab {
+				padding-right: 5vw;
+			}
+		}
+		.counter {
+			@include tab {
+				right: -33px;
+			}
+		}
+	}
+
+	.process-info:nth-child(even) {
+		margin-top: 0;
+		@include tab {
+			padding-top: 80px;
+			margin-top: 10%;
+			left: -2px;
+		}
+		h3.title {
+			@include tab {
+				padding-left: 5vw;
+			}
+		}
+		.text {
+			@include tab {
+				padding-left: 5vw;
+			}
+		}
+		.counter {
+			@include tab {
+				left: -33px;
+			}
+		}
+	}
+
+	.inner-pad {
+		position: relative;
+		@include tab {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+	.middle-line {
+		@include tab {
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-right: 2px solid $secondary;
+			&:before, &:after {
+				content:"";
+				display: block;
+				width: 6vw;
+				border-bottom: 2px solid $secondary;
+				position: absolute;
+				right: 0;
+				margin-right: -3vw;
+			}
+			&:before {
+				top: 0;
+				margin-top: -1.2vw;
+			}
+			&:after {
+				bottom: 0;
+				margin-bottom: -1.2vw;
+			}
+		}
+	}
+
+	@media screen and (max-width: $tabwidth - 1px) {
+		.wrapper {
+			padding-left: 40px;
+		}
+		.process-info {
+    	padding-bottom: 60px;
+    	padding-top: 30px;
+    	h3.title {
+    		padding-left: 6vw;
+    	}
+    	.text {
+    		border-top: 2px solid $secondary;
+  			padding-top: 20px;
+  			padding-left: 6vw;
+    	}
+		}
+		.process-info:last-child {
+			padding-bottom: 30px;
+		}
+		.counter {
+			width: 50px;
+			height: 50px;
+			left: -26px;
+			font-size: 1.5rem;
+		}
+		.middle-line {
+			width: 2px;
+			height: 100%;
+			background: $secondary;
+			position: absolute;
+			top: 0;
+			left: 0;
+			&:before, &:after {
+				content:"";
+				display: block;
+				width: 6vw;
+				border-bottom: 2px solid $secondary;
+				position: absolute;
+				right: 0;
+				margin-right: -3vw;
+			}
+			&:before {
+				top: 0;
+				margin-top: -1.2vw;
+			}
+			&:after {
+				bottom: 0;
+				margin-bottom: -1.2vw;
+			}
+		}
+	}
+}
+
+
 /* FOOTER */
 .site-footer {
 	background: $gray;
