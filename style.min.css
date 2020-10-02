@@ -1926,11 +1926,12 @@ body.slide-text-open{overflow:hidden}
 @media(min-width:820px){.col-title{font-size:40px}
 }.btn-theme{display:inline-block;background:#15284b;color:#FFF;padding:14px 40px 12px 22px;font-size:15px;line-height:1.1;text-decoration:none;text-transform:uppercase;letter-spacing:2px;text-align:center;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}
 .btn-theme.wide{min-width:280px}
-.btn-theme .arrow{display:inline-block;width:10px;height:100%;position:absolute;top:3px;right:18px}
+.btn-theme .arrow{display:inline-block;width:10px;height:100%;position:absolute;top:3px;right:18px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .btn-theme .arrow:before,.btn-theme .arrow:after{content:"";display:block;width:100%;height:2px;background:#cd9700;position:absolute;top:50%;left:0;-webkit-transition:all ease .3s;transition:all ease .3s}
 .btn-theme .arrow:before{margin-top:-6px;-webkit-transform:translateY(-50%) rotate(42deg);-ms-transform:translateY(-50%) rotate(42deg);transform:translateY(-50%) rotate(42deg)}
 .btn-theme .arrow:after{-webkit-transform:translateY(-50%) rotate(-42deg);-ms-transform:translateY(-50%) rotate(-42deg);transform:translateY(-50%) rotate(-42deg)}
-.btn-theme:hover{background:#cd9700}
+.btn-theme:hover{color:#FFF;background:#cd9700}
+.btn-theme:hover .arrow{-webkit-transform:translateX(3px);-ms-transform:translateX(3px);transform:translateX(3px)}
 .btn-theme:hover .arrow:before,.btn-theme:hover .arrow:after{background:#FFF}
 .home-row-2{background:#f5f5f5;position:relative}
 .home-row-2:after{content:"";display:block;width:18vw;height:100%;position:absolute;top:0;right:0;background:#7d8491}
@@ -2057,6 +2058,9 @@ body.slide-text-open{overflow:hidden}
 }.section-3 .textcol .inner{width:100%}
 .section-3 .sec-button{margin-top:40px}
 @media(min-width:820px){.section-3 .sec-button{margin-top:60px}
+}.section-3.title-in-editor h2{font-family:"Cinzel",serif;font-size:30px;font-weight:400;line-height:1.2;margin:0 0 25px;position:relative}
+.section-3.title-in-editor h2:after{content:"";display:block;width:12%;height:2px;background:#cd9700;margin:20px 0 0}
+@media(min-width:820px){.section-3.title-in-editor h2{font-size:40px}
 }.section-4{background:#f5f5f5;position:relative;padding-top:50px;padding-bottom:50px}
 @media(min-width:820px){.section-4{padding-top:100px;padding-bottom:100px}
 .section-4:after{content:"";display:block;width:20vw;height:100%;position:absolute;top:0;right:0;background:#7d8491}

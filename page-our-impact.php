@@ -20,14 +20,13 @@ get_header(); ?>
 			<?php } ?>
 
 			<?php
-			$section_2_title = get_field("section_2_title");
 			$section_2_description = get_field("section_2_description");
 			$section_2_button = get_field("section_2_button");
 			$section_2_image = get_field("section_2_image");
-			$section_2_class = ( ($section_2_title || $section_2_description) &&  $section_2_image ) ? 'half':'full';
+			$section_2_class = ( $section_2_description &&  $section_2_image ) ? 'half':'full';
 			?>
-			<?php if ( ($section_2_title || $section_2_description) ||  $section_2_image ) { ?>
-				<div class="section-3 fw-left font18 <?php echo $section_2_class ?>">
+			<?php if ( $section_2_description ||  $section_2_image ) { ?>
+				<div class="section-3 title-in-editor fw-left font18 <?php echo $section_2_class ?>">
 					<div class="flexwrap">
 						<?php if ($section_2_image) { ?>
 							<div class="imagecol">
@@ -39,9 +38,6 @@ get_header(); ?>
 						<?php if ($section_2_title || $section_2_description) { ?>
 							<div class="textcol">
 								<div class="inner">
-									<?php if ($section_2_title) { ?>
-										<h2 class="col-title"><?php echo $section_2_title ?></h2>
-									<?php } ?>
 									<?php if ($section_2_description) { ?>
 										<div class="sec-text"><?php echo anti_email_spam($section_2_description) ?></div>
 									<?php } ?>

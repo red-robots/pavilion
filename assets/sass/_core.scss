@@ -946,6 +946,7 @@ body.slide-text-open {
 		position: absolute;
 		top: 3px;
 		right: 18px;
+		transition: all ease .3s;
 		&:before, &:after {
 			content:"";
 			display: block;
@@ -966,8 +967,10 @@ body.slide-text-open {
 		}
 	}
 	&:hover {
+		color: #FFF;
 		background: $secondary;
 		.arrow {
+			transform: translateX(3px);
 			&:before,&:after {
 				background: #FFF;
 			}
@@ -1538,6 +1541,28 @@ body.slide-text-open {
 		margin-top: 40px;
 		@include tab {
 			margin-top: 60px;
+		}
+	}
+}
+
+.section-3.title-in-editor {
+	h2 {
+		font-family: $font_secondary;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 1.2;
+		margin: 0 0 25px;
+		position: relative;
+		&:after {
+			content:"";
+			display: block;
+			width: 12%;
+			height: 2px;
+			background: $secondary;
+			margin: 20px 0 0;
+		}
+		@include tab {
+			font-size: 40px;
 		}
 	}
 }
