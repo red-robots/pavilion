@@ -2950,8 +2950,8 @@ div.post-edit-link {
 }
 
 .section-4-impact {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 	@include tab {
 		padding-top: 100px;
 		padding-bottom: 100px;
@@ -2966,8 +2966,20 @@ div.post-edit-link {
 	}
 	.gallery-wrap {
 		margin-bottom: 30px;
+		&.spacer {
+			display: none;		
+			@include tab {
+				display: block;
+			}
+		}
 	}
 	.text-wrap {
+		padding-right: 8vw;
+    padding-left: 14vw;
+		@include tab {
+			padding-right: 5vw;
+			padding-left: 5vw;
+		}
 		h2 {
 			font-family: $font_secondary;
 			font-size: 30px;
@@ -2999,7 +3011,10 @@ div.post-edit-link {
 		}
 	}
 	.fullwidth-image {
-		margin: 60px 0;
+		margin: 30px 0 40px;
+		@include tab {
+			margin: 60px 0;
+		}
 		img {
 			width: 100%;
 			height: auto;
@@ -3008,23 +3023,23 @@ div.post-edit-link {
 	}
 	.flexwrap.section-inner {
 		background: $light-gray;
-		padding-top: 50px;
+		padding-top: 0;
 		padding-bottom: 50px;
 		position: relative;
 		@include tab {
 			padding-top: 80px;
 			padding-bottom: 80px;
-		}
-		&:before {
-			content:"";
-			display: block;
-			width: 7vw;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background: #FFF;
-			z-index: 2;
+			&:before {
+				content:"";
+				display: block;
+				width: 7vw;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #FFF;
+				z-index: 2;
+			}
 		}
 		&:after {
 			content:"";
@@ -3036,6 +3051,7 @@ div.post-edit-link {
 			left: 0;
 			background: $secondary;
 		}
+		
 	}
 	&.half {
 		.gallery-wrap {
@@ -3044,11 +3060,17 @@ div.post-edit-link {
 				width: 30%;
 				margin-bottom: 0;
 			}
+			&.spacer {
+				display: none;
+				@include tab {
+					display: block;
+				}
+			}
 		}
 		.text-wrap {
 			width: 100%;
-			padding-right: 30px;
-			padding-left: 30px;
+			padding-right: 8vw;
+    	padding-left: 8vw;
 			@include tab {
 				width: 70%;
 				padding-right: 5vw;
@@ -3061,6 +3083,7 @@ div.post-edit-link {
 .section-5-impact {
 	padding-top: 20px;
 	padding-bottom: 20px;
+	margin-bottom: 50px;
 	@include tab {
 		padding-top: 20px;
 		padding-bottom: 100px;
@@ -3075,6 +3098,12 @@ div.post-edit-link {
 	}
 	.gallery-wrap {
 		margin-bottom: 30px;
+		&.spacer {
+			display: none;		
+			@include tab {
+				display: block;		
+			}
+		}
 	}
 	.text-wrap {
 		h2 {
@@ -3108,7 +3137,10 @@ div.post-edit-link {
 		}
 	}
 	.fullwidth-image {
-		margin: 60px 0;
+		margin: 30px 0 40px;
+		@include tab {
+			margin: 60px 0;
+		}
 		img {
 			width: 100%;
 			height: auto;
@@ -3117,23 +3149,23 @@ div.post-edit-link {
 	}
 	.flexwrap.section-inner {
 		background: $light-gray;
-		padding-top: 50px;
+		padding-top: 0;
 		padding-bottom: 50px;
 		position: relative;
 		@include tab {
 			padding-top: 80px;
 			padding-bottom: 80px;
-		}
-		&:before {
-			content:"";
-			display: block;
-			width: 7vw;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background: #FFF;
-			z-index: 2;
+			&:before {
+				content:"";
+				display: block;
+				width: 7vw;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #FFF;
+				z-index: 2;
+			}
 		}
 		&:after {
 			content:"";
@@ -3145,6 +3177,8 @@ div.post-edit-link {
 			left: 0;
 			background: $secondary;
 		}
+		
+		
 	}
 	&.half {
 		.gallery-wrap {
@@ -3152,6 +3186,12 @@ div.post-edit-link {
 			@include tab {
 				width: 30%;
 				margin-bottom: 0;
+			}
+			&.spacer {
+				display: none;
+				@include tab {
+					display: block;
+				}
 			}
 		}
 		.text-wrap {

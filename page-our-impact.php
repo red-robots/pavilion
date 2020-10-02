@@ -102,7 +102,7 @@ get_header(); ?>
 							<?php } ?>
 
 							<?php if ( $section_4_text2 ) { ?>
-								<div class="gallery-wrap">&nbsp;</div>
+								<div class="gallery-wrap spacer">&nbsp;</div>
 								<div class="text-wrap">
 									<?php echo anti_email_spam($section_4_text2); ?>
 								</div>
