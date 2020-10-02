@@ -47,6 +47,13 @@ pre {
 a,button,input,select,textarea {
 	transition: all ease .3s;
 }
+a {
+	color: $secondary;
+	text-decoration: underline;
+	&:hover {
+		color: tint($secondary,40%);
+	}
+}
 body {
 	font-family: $font_primary;
 	font-size: 15px;
@@ -2883,6 +2890,257 @@ div.post-edit-link {
 	}
 }
 
+/* Our Impact */
+.blue-section {
+	background: $primary;
+	color: #FFF;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include tab {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	h2 {
+		font-family: $font_secondary;
+		font-size: 25px;
+		font-weight: 400;
+		line-height: 1.2;
+		margin: 0 0 30px;
+		position: relative;
+		@include tab {
+			font-size: 35px;
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 7vw;
+			height: 2px;
+			background: $secondary;
+			margin: 20px auto 0;
+		}
+	}
+	h2:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.section-4-impact {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@include tab {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.gallery-wrap,
+	.text-wrap,
+	.fullwidth-image {
+		width: 100%;
+		float: left;
+		position: relative;
+		z-index: 10;
+	}
+	.gallery-wrap {
+		margin-bottom: 30px;
+	}
+	.text-wrap {
+		h2 {
+			font-family: $font_secondary;
+			font-size: 30px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin: 0 0 25px;
+			position: relative;
+			@include tab {
+				font-size: 40px;
+			}
+			&:after {
+				content: "";
+				display: block;
+				width: 12%;
+				height: 2px;
+				background: $secondary;
+				margin: 20px 0 0;
+			}
+		}
+	}
+	.imgbox {
+		width: 100%;
+		float: left;
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.fullwidth-image {
+		margin: 60px 0;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.flexwrap.section-inner {
+		background: $light-gray;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		position: relative;
+		@include tab {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+		&:before {
+			content:"";
+			display: block;
+			width: 7vw;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #FFF;
+			z-index: 2;
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: $secondary;
+		}
+	}
+	&.half {
+		.gallery-wrap {
+			width: 100%;
+			@include tab {
+				width: 30%;
+				margin-bottom: 0;
+			}
+		}
+		.text-wrap {
+			width: 100%;
+			padding-right: 30px;
+			padding-left: 30px;
+			@include tab {
+				width: 70%;
+				padding-right: 5vw;
+				padding-left: 5vw;
+			}
+		}
+	}
+}
+
+.section-5-impact {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@include tab {
+		padding-top: 20px;
+		padding-bottom: 100px;
+	}
+	.gallery-wrap,
+	.text-wrap,
+	.fullwidth-image {
+		width: 100%;
+		float: left;
+		position: relative;
+		z-index: 10;
+	}
+	.gallery-wrap {
+		margin-bottom: 30px;
+	}
+	.text-wrap {
+		h2 {
+			font-family: $font_secondary;
+			font-size: 30px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin: 0 0 25px;
+			position: relative;
+			@include tab {
+				font-size: 40px;
+			}
+			&:after {
+				content: "";
+				display: block;
+				width: 12%;
+				height: 2px;
+				background: $secondary;
+				margin: 20px 0 0;
+			}
+		}
+	}
+	.imgbox {
+		width: 100%;
+		float: left;
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.fullwidth-image {
+		margin: 60px 0;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.flexwrap.section-inner {
+		background: $light-gray;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		position: relative;
+		@include tab {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+		&:before {
+			content:"";
+			display: block;
+			width: 7vw;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #FFF;
+			z-index: 2;
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: $secondary;
+		}
+	}
+	&.half {
+		.gallery-wrap {
+			width: 100%;
+			@include tab {
+				width: 30%;
+				margin-bottom: 0;
+			}
+		}
+		.text-wrap {
+			width: 100%;
+			padding-right: 30px;
+			padding-left: 30px;
+			@include tab {
+				width: 70%;
+				padding-right: 5vw;
+				padding-left: 5vw;
+			}
+		}
+	}
+}
 
 /* FOOTER */
 .site-footer {
