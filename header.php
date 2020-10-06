@@ -25,7 +25,10 @@
 			<div class="flexwrap">
 				<?php if( get_custom_logo() ) { ?>
 	          <div class="logo">
-	          	<?php the_custom_logo(); ?>
+	          	<?php //the_custom_logo(); ?>
+	          	<a href="<?php bloginfo('url'); ?>">
+	          		<img src="<?php bloginfo('template_url'); ?>/images/logo.svg" alt="<?php bloginfo('name'); ?> Logo" />
+	          	</a>
 	          </div>
 	      <?php } else { ?>
 	          <h1 class="logo">
