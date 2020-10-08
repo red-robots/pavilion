@@ -1892,9 +1892,10 @@ body.logged-in.admin-bar #closeMobileMenu{top:70px}
 .subpage-banner{width:100%;float:left;position:relative;overflow:hidden;height:400px;background-color:#15284b}
 @media(min-width:820px){.subpage-banner{height:500px}
 }@media(min-width:900px){.subpage-banner{height:650px}
-}.subpage-banner .slideImage{width:100%;height:100%;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat}
+}.subpage-banner .slideImage{width:100%;height:100%;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#15284b}
+.subpage-banner .slideImage img.placeholder{width:100%;height:auto;float:left;display:none}
 .subpage-banner .slideCaption{width:100%;height:100%;position:absolute;top:0;left:0;-webkit-transition:all ease .3s;transition:all ease .3s}
-.subpage-banner .slideCaption .text{width:70%;height:100%;padding:5vw;-webkit-transition:all ease .3s;transition:all ease .3s;background:rgba(21,40,75,0.92);display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.subpage-banner .slideCaption .text{width:100%;height:100%;padding:5vw;-webkit-transition:all ease .3s;transition:all ease .3s;background:rgba(21,40,75,0.92);display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 @media(min-width:820px){.subpage-banner .slideCaption .text{width:60%}
 }@media(min-width:900px){.subpage-banner .slideCaption .text{width:50%}
 }@media(min-width:1200px){.subpage-banner .slideCaption .text{width:40%}

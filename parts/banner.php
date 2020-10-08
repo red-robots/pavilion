@@ -131,7 +131,9 @@ if( is_front_page() ) {
 	$banner_description = get_field("banner_description");
 	if($banner) { ?>
 	<div class="subpage-banner">
-		<div class="slideImage" style="background-image:url('<?php echo $banner['url']?>');"></div>
+		<div class="slideImage" style="background-image:url('<?php echo $banner['url']?>');">
+			<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
+		</div>
 
 		<?php if ( ($banner_title_small || $banner_title_large) || $banner_description ) { ?>
 			<div class="slideCaption">
