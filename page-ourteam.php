@@ -87,5 +87,44 @@ get_header(); ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
+<div id="popupStaffInfo" class="animated"><div id="popupInner" class="animated"></div></div>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	var test = 'http://bellaworks/pavilion/team/todd-carr/';
+	// $("#popupInner").load(test+" #staffData",function(){
+	// 	$(this).find(".inner-wrap").prepend('<a id="closeStaffIno"><span>x</span></a>');
+	// 	$("#popupStaffInfo").addClass("show");
+	// });
+
+	if( $(".staff-page-info").length>0 ) {
+		
+		$(".staff-page-info").each(function(){
+			var link = $(this).attr("href");
+			$(this).attr("data-url",link);
+			$(this).removeAttr("href");
+		});
+
+		$(".staff-page-info").click(function(e){
+			e.preventDefault();
+			var link = $(this).attr("data-url");
+			$("#popupInner").load(link+" #staffData",function(){
+				$("#popupStaffInfo").addClass("show");
+				$(this).find(".inner-wrap").prepend('<a id="closeStaffIno"><span>x</span></a>');
+				$("body").addClass("modal-open");
+			});
+		});
+
+		$(document).on("click","#closeStaffIno",function(e){
+			e.preventDefault();
+			$("#popupStaffInfo").addClass("closed");
+			setTimeout(function(){
+				$("#popupStaffInfo").removeClass("show closed");
+				$("#popupInner").html("");
+				$("body").removeClass("modal-open");
+			},800);
+		});
+	}
+});
+</script>
 <?php
 get_footer();

@@ -2240,6 +2240,7 @@ body.slide-text-open {
 		}
 		a.info {
 			display: block;
+			cursor: pointer;
 			width: 100%;
 			text-decoration: none;
 			position: relative;
@@ -3212,6 +3213,213 @@ div.post-edit-link {
 			}
 		}
 	}
+}
+
+#staffData {
+	width: 100%;
+	float: left;
+	.pageheader {
+		position: relative;
+		margin-bottom: 20px;
+		@include tab {
+			margin-bottom: 25px;
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 3px;
+			background: $secondary;
+			margin: 15px 0 0;
+			@include tab {
+				width: 10%;
+			}
+		}
+	}
+	.page-title {
+		font-family: $font-secondary;
+		font-size: 35px;
+		font-weight: 400;
+		line-height: 1.2;
+		margin: 0 0;
+	}
+	.jobtitle {
+		margin: 0 0;
+		font-size: 16px;
+		line-height: 1.2;
+		@include tab {
+			font-size: 15px;
+		}
+	}
+	.details-wrapper {
+		width: 100%;
+		float: left;
+		padding: 80px 0;
+		background: $light-gray;
+		.staffInfo, .staff-image {
+			width: 100%;
+			float: left;
+		}
+		.staff-image {
+			margin-top: 30px;
+			.photo {
+				max-width: 500px;
+				width: 100%;
+				margin: 0 auto;
+			}
+			img.pic {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.staffInfo {
+			text-align: left;
+			margin: 0 0;
+			padding: 0 0;
+			background: transparent;
+		}
+
+		&.half {
+			.staffInfo {
+				width: 100%;
+				float: left;
+				@include tab {
+					width: 60%;
+				}
+			}
+			.staff-image {
+				width: 100%;
+				float: left;
+				margin-top: 0;
+				@include tab {
+					width: 40%;
+					float: right;
+					padding-left: 3vw;
+				}
+				.photo {
+					max-width: 100%;
+					width: 100%;
+					float: left;
+				}
+				img.pic {
+					float: left;
+				}
+			}
+		}
+	}
+}
+body.modal-open{overflow:hidden;}
+#popupStaffInfo {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.85);
+	z-index: 3000;
+	display: none;
+	-webkit-animation-name: zoomExit;
+  animation-name: zoomExit;
+	&.show {
+		@included animated(0.6s);
+		display: block;
+		-webkit-animation-name: zoomOut3;
+    animation-name: zoomOut3;
+	}
+	&.closed {
+		animation-duration: 0.5s!important;
+		-webkit-animation-name: zoomExit;
+  	animation-name: zoomExit;
+	}
+
+	#popupInner {
+		width: 100%;
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	#staffData {
+		height: 100%;
+		padding: 20px;
+		.details-wrapper {
+			background: transparent;
+			padding: 0 0;
+			height: 100%;
+			
+			@include flexgroup-center();
+			.wrapper {
+				background: $light-gray;
+				padding: 40px 30px;
+				position: relative;
+				box-shadow: 0 0 17px rgba(0,0,0,0.4);
+				@include tab {
+					padding: 30px;
+				}
+			}
+			.staffInfo p:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+	#closeStaffIno {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 30px;
+		line-height: 1;
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		z-index: 50;
+		opacity: .5;
+		span {
+			display: none;
+		}
+		&:before, &:after {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 3px;
+			background: #000;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transition: all ease .3s;
+
+		}
+		&:before {
+			transform: translateY(-50%) rotate(45deg);
+		}
+		&:after {
+			transform: translateY(-50%) rotate(-45deg);
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+@keyframes zoomOut3 {
+  from {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  to {
+  	transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes zoomExit {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
 }
 
 /* FOOTER */
