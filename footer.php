@@ -40,7 +40,7 @@
 	</footer><!-- #colophon -->
 	
 </div><!-- #page -->
-
+<div id="siteLoader"><div id="midloader"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
 <?php wp_footer(); ?>
 
 </body>

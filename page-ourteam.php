@@ -107,10 +107,15 @@ jQuery(document).ready(function($){
 		$(".staff-page-info").click(function(e){
 			e.preventDefault();
 			var link = $(this).attr("data-url");
+			$("#siteLoader").addClass("show");
 			$("#popupInner").load(link+" #staffData",function(){
-				$("#popupStaffInfo").addClass("show");
 				$(this).find(".inner-wrap").prepend('<a id="closeStaffIno"><span>x</span></a>');
 				$("body").addClass("modal-open");
+				
+				setTimeout(function(){
+					$("#siteLoader").removeClass("show");
+					$("#popupStaffInfo").addClass("show");
+				},500);
 			});
 		});
 
@@ -121,6 +126,7 @@ jQuery(document).ready(function($){
 				$("#popupStaffInfo").removeClass("show closed");
 				$("#popupInner").html("");
 				$("body").removeClass("modal-open");
+				$("#siteLoader").removeClass("show");
 			},800);
 		});
 	}
