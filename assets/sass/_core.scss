@@ -3321,7 +3321,7 @@ body.modal-open{overflow:hidden;}
 	-webkit-animation-name: zoomExit;
   animation-name: zoomExit;
 	&.show {
-		@included animated(0.6s);
+		@include animated(0.6s);
 		display: block;
 		-webkit-animation-name: zoomOut3;
     animation-name: zoomOut3;

@@ -90,7 +90,7 @@ get_header(); ?>
 <div id="popupStaffInfo" class="animated"><div id="popupInner" class="animated"></div></div>
 <script type="text/javascript">
 jQuery(document).ready(function($){
-	var test = 'http://bellaworks/pavilion/team/todd-carr/';
+	//var test = 'http://bellaworks/pavilion/team/todd-carr/';
 	// $("#popupInner").load(test+" #staffData",function(){
 	// 	$(this).find(".inner-wrap").prepend('<a id="closeStaffIno"><span>x</span></a>');
 	// 	$("#popupStaffInfo").addClass("show");
@@ -98,13 +98,13 @@ jQuery(document).ready(function($){
 
 	if( $(".staff-page-info").length>0 ) {
 		
-		$(".staff-page-info").each(function(){
-			var link = $(this).attr("href");
-			$(this).attr("data-url",link);
-			$(this).removeAttr("href");
-		});
+		// $(".staff-page-info").each(function(){
+		// 	var link = $(this).attr("href");
+		// 	$(this).attr("data-url",link);
+		// 	$(this).removeAttr("href");
+		// });
 
-		$(".staff-page-info").click(function(e){
+		$(document).on("click",".staff-page-info",function(e){
 			e.preventDefault();
 			var link = $(this).attr("data-url");
 			$("#siteLoader").addClass("show");

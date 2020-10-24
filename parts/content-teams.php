@@ -76,7 +76,7 @@ $exclude_teams = get_field("exclude_from_the_list",$pageId);
 		          ?>
 		          <div class="teamInfo animated fadeIn">
 		          	<div class="wrap cf">
-		              <a href="<?php echo $link ?>" class="info staff-page-info">
+		              <a data-url="<?php echo $link ?>" href="<?php echo $link ?>" class="info staff-page-info">
 	                  <span class="photo <?php echo ($image) ? 'yes':'no'; ?>"<?php echo $style ?>>
 	                    <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
 	                  </span>
