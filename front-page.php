@@ -12,7 +12,7 @@
 		<div class="home-row home-row-2">
 			<div class="wrapper row-2-content">
 				<div class="flexwrap">
-					<div class="left fadeIn wow" data-wow-delay="0.5s">
+					<div class="left fadeIn wow">
 						<?php if ($section_2_title) { ?>
 							<h2 class="col-title"><?php echo $section_2_title ?></h2>
 						<?php } ?>
@@ -23,7 +23,7 @@
 					<!-- <div class="right">&nbsp;</div> -->
 
 					<?php if ($section_2_link_text && $section_2_link_url) { ?>
-					<div class="ctaButton fadeInDown wow" data-wow-delay="0.7s">
+					<div class="ctaButton fadeInDown wow">
 						<a href="<?php echo $section_2_link_url ?>" class="btn btn-theme"><?php echo $section_2_link_text ?><span class="arrow"></span></a>
 					</div>	
 					<?php } ?>
@@ -51,7 +51,7 @@
 
 				<?php if ($section_3_gallery) { 
 					$count = count($section_3_gallery); ?>
-					<div class="col-gallery count-<?php echo $count;?> fadeIn wow" data-wow-delay="0.6s">
+					<div class="col-gallery count-<?php echo $count;?> fadeIn wow">
 						<div class="gallery-inner">
 						<?php $i=1; foreach ($section_3_gallery as $g) { 
 							$boxClass = ($i % 2 == 0 ) ? 'even':'odd'; ?>
@@ -71,7 +71,7 @@
 				<?php } ?>
 
 				<?php if ( $section_3_title || $section_3_description ) { ?>
-					<div class="col-description fadeIn wow" data-wow-delay="0.75s">
+					<div class="col-description fadeIn wow">
 						<div class="inner">
 							<?php if ($section_3_title) { ?>
 								<h2 class="col-title"><?php echo $section_3_title ?></h2>
@@ -105,7 +105,7 @@
 		if( ($section_4_title || $section_4_description) || $section_4_icons ) { ?>
 		<div class="home-row home-row-4">
 			<div class="wrapper">
-				<div class="wrapper-narrow text-center fadeIn wow" data-wow-delay="0.6s">
+				<div class="wrapper-narrow text-center fadeIn wow">
 					<?php if ($section_4_title) { ?>
 						<h2 class="col-title"><?php echo $section_4_title ?></h2>
 					<?php } ?>
@@ -115,7 +115,7 @@
 				</div>
 
 				<?php if ($section_4_icons) { ?>
-					<div class="features-info fadeIn wow" data-wow-delay="0.7s">
+					<div class="features-info fadeIn wow">
 						<div class="wrapper">
 							<div class="flexwrap">
 								<?php foreach ($section_4_icons as $s) { 
@@ -130,7 +130,7 @@
 											<?php } ?>
 
 											<?php if ($title) { ?>
-											<h3 class="h3"><?php echo $title ?></h3>
+											<h3 class="h3 js-blocks"><?php echo $title ?></h3>
 											<?php } ?>
 
 											<?php if ($text) { ?>
@@ -145,7 +145,7 @@
 				<?php } ?>
 
 				<?php if ($section_4_link_text && $section_4_link_url) { ?>
-				<div class="ctaButton text-center fadeInDown wow" data-wow-delay="0.6s">
+				<div class="ctaButton text-center fadeInDown wow">
 					<a href="<?php echo $section_4_link_url ?>" class="btn-theme white"><?php echo $section_4_link_text ?><span class="arrow"></span></a>
 				</div>	
 				<?php } ?>
@@ -168,13 +168,13 @@
 			<div class="wrapper">
 				<div class="inner">
 					<?php if ($section_5_image) { ?>
-					<div class="imagecol fadeInLeft wow" data-wow-delay="0.7s">
+					<div class="imagecol fadeIn wow">
 						<img src="<?php echo $section_5_image['url'] ?>" alt="<?php echo $section_5_image['title'] ?>" />
 					</div>	
 					<?php } ?>
 
 					<?php if ( $section_5_title || $section_5_description ) { ?>
-					<div class="textcol fadeIn wow" data-wow-delay="0.6s">
+					<div class="textcol fadeIn wow">
 						<?php if ($section_5_title) { ?>
 							<h2 class="col-title"><?php echo $section_5_title ?></h2>
 						<?php } ?>
@@ -206,7 +206,7 @@
 		if( ($section_6_title || $section_6_description) || $section_6_icons ) { ?>
 		<div class="home-row home-row-6">
 			<div class="wrapper">
-				<div class="wrapper-narrow text-center fadeIn wow" data-wow-delay="0.6s">
+				<div class="wrapper-narrow text-center fadeIn wow">
 					<?php if ($section_6_title) { ?>
 						<h2 class="col-title"><?php echo $section_6_title ?></h2>
 					<?php } ?>
@@ -216,7 +216,7 @@
 				</div>
 
 				<?php if ($section_6_icons) { ?>
-					<div class="features-info fadeIn wow" data-wow-delay="0.7s">
+					<div class="features-info fadeIn wow">
 						<div class="wrapper">
 							<div class="flexwrap">
 								<?php foreach ($section_6_icons as $s) { 
@@ -231,7 +231,7 @@
 											<?php } ?>
 
 											<?php if ($title) { ?>
-											<h3 class="h3"><?php echo $title ?></h3>
+											<h3 class="h3 js-blocks"><?php echo $title ?></h3>
 											<?php } ?>
 
 											<?php if ($text) { ?>

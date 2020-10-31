@@ -5,6 +5,10 @@
  */
 
 jQuery(document).ready(function ($) {
+
+	new WOW().init();
+
+	$('.js-blocks').matchHeight();
 	
 	/* Slideshow */
 	var swiper = new Swiper('#slideshow', {
@@ -140,14 +144,6 @@ jQuery(document).ready(function ($) {
 			$('.gform_footer input[type="submit"]').trigger("click");
 		});
 	}
-
-
-	/*
-	*
-	*	Wow Animation
-	*
-	------------------------------------*/
-	new WOW().init();
 
 
 	$(document).on("click",".menu-toggle",function(e){

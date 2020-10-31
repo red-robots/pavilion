@@ -3,9 +3,12 @@
 
 	<?php
 	$footer_logo = get_field("footer_logo","option");
-	$address = get_field("address","option");
+	$address_line1 = get_field("address","option");
+	$address_line2 = get_field("address_line2","option");
 	$phone = get_field("phone","option");
 	$fax = get_field("fax","option");
+	$addressArr = array($address_line1,$address_line2);
+	$address = ($addressArr && array_filter($addressArr)) ? implode(", ",array_filter($addressArr)) : '';
 	?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">

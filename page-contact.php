@@ -15,7 +15,9 @@ get_header(); ?>
 			<?php if ( $contact_info_text ) { ?>
 				<div class="contactdiv intro fw-left text-center">
 					<div class="wrapper">
-						<div class="wrapper-narrow font18"><?php echo anti_email_spam($contact_info_text); ?></div>
+						<div class="flexwrap font18">
+							<?php echo anti_email_spam($contact_info_text); ?>
+						</div>
 					</div>
 				</div>	
 			<?php } ?>
@@ -37,5 +39,13 @@ get_header(); ?>
 		<?php endwhile; ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
+<script>
+jQuery(document).ready(function($){
+	var contact_count =  $(".contactdiv .contact-info-shortcode").length;
+	if(contact_count==1) {
+		$(".contactdiv .contact-info-shortcode").addClass('full-width');
+	}
+});
+</script>
 <?php
 get_footer();

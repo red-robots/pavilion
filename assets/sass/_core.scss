@@ -223,23 +223,32 @@ body {
 	opacity: 0;
 	overflow: hidden;
 	li {
-		background: $secondary;
+		background: $primary;
 		display: block;
 		width: 100%;
 		padding: 0 20px;
-	}
-	a {
-		padding: 5px 0;
-		color: #FFF;
-		font-size: 15px;
-		line-height: 1.2;
+		a {
+			padding: 5px 0;
+			color: #FFF;
+			font-size: 15px;
+			line-height: 1.2;
+			span:after {
+				display: none;
+			}
+			&:hover {
+				color: $secondary;
+			}
+		}
 		&:hover {
-			color: $primary;
+			a span:after {
+				display: none;
+			}
 		}
 	}
+	
 }
 .main-navigation ul > li > ul li.current_page_item > a {
-	color: $primary;
+	color: $secondary;
 }
 .main-navigation ul > li > ul > li:first-child {
 	padding-top: 15px;
@@ -419,18 +428,17 @@ body {
 		}
 		.mobile-inner {
 			background: #FFF;
-			padding: 30px 30px 60px;
+			padding: 30px 0 60px;
 			box-shadow: -6px 0 40px 5px rgba(0,0,0,0.3);
 		}
 		ul#primary-mobile-menu.mobile-menu > li > a {
-			padding-top: 15px;
-			padding-bottom: 15px;
+			padding: 15px 30px;
 		}
 		ul#primary-mobile-menu.mobile-menu ul {
 			border-bottom: 1px solid $primary;
 			padding-bottom: 25px;
 			margin: 0 0;
-			padding: 0 0 13px 15px;
+			padding: 0 15px 13px 30px;
 			list-style: none;
 			li a {
 				position: relative;
@@ -456,6 +464,7 @@ body {
 		ul#primary-mobile-menu.mobile-menu > li.current_page_item > a,
 		ul#primary-mobile-menu.mobile-menu > li:hover > a {
 			color: $secondary;
+			background: $primary;
 		}
 	}
 
@@ -469,7 +478,7 @@ body {
 	}
 	body.logged-in.admin-bar {
 		.mobile-inner {
-			padding-top: 50px;
+			padding-top: 46px;
 		}
 	}
 	#closeMobileMenu:before, 
@@ -478,7 +487,7 @@ body {
 	}
 	body.logged-in.admin-bar {
 		#mobile-navigation .mobile-inner {
-			padding-top: 50px;
+			padding-top: 46px;
 		}
 		#closeMobileMenu {
 			top: 70px;
@@ -2468,7 +2477,35 @@ div.post-edit-link {
 }
 
 .contact-info-shortcode {
-	margin-top: 40px;
+	&.left, &.right {
+		width: 100%;
+		float: left;
+		@include tab {
+			width: 50%;
+		}
+	}
+	&.left {
+		margin-bottom: 50px;
+		@include tab {
+			margin-bottom: 0;
+			padding-right: 20px;
+			@include flexgroup();
+			@include flexbox-align-items(center);
+			@include flexbox-justify(center);
+			.inner {
+				width: 100%;
+			}
+		}
+	}
+	&.right {
+		@include tab {
+			float: right;
+			padding-left: 30px;
+		}
+	}
+	&.full-width {
+		width: 100%!important;
+	}
 	.sc-address {
 		display: block;
 		width: 100%;
@@ -2482,12 +2519,24 @@ div.post-edit-link {
 		@include tab {
 			font-size: 35px;
 		}
+		&:after {
+			content:"";
+			display: block;
+			width: 15%;
+			height: 2px;
+			margin: 30px auto 0;
+			background: $secondary;
+		}
+		span {
+			display: block;
+			width: 100%;
+		}
 	}
 	.sc-map {
 		display: block;
 		max-width: 520px;
 		width: 100%;
-		margin: 40px auto 0;
+		margin: 0 0;
 		position: relative;
 		border: 1px solid $gray;
 		iframe {
@@ -3527,7 +3576,7 @@ body.modal-open{overflow:hidden;}
 
 /* FOOTER */
 .site-footer {
-	background: $gray;
+	background: $primary;
 	color: #FFF;
 	width: 100%;
 	float: left;

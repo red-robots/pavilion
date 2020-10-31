@@ -241,7 +241,18 @@ function display_contact_info( $atts ) {
     $custom_class = ($atts['class']) ? ' ' . $atts['class'] : '';
     $show = ($atts['show']) ? $atts['show'] : 'all';
 
-    $address = get_field("address","option");
+    $address_line1 = get_field("address","option");
+    $address_line2 = get_field("address_line2","option");
+    // $addressArr = array($address_line1,$address_line2);
+    // $address = ($addressArr && array_filter($addressArr)) ? implode(", ",array_filter($addressArr)) : '';
+    $address = '';
+    if($address_line1) {
+        $address = '<span class="address1">'.$address_line1.'</span>';
+    }
+    if($address_line2) {
+        $address .= '<span class="address2">'.$address_line2.'</span>';
+    }
+
     $phone = get_field("phone","option");
     $fax = get_field("fax","option");
     $gmap = get_field("gmap","option");
@@ -255,84 +266,84 @@ function display_contact_info( $atts ) {
     $output = ''; 
     $isPhNums = array('phone','fax');
     $isEmails = array('email');
-    $placeholder = THEMEURI . 'images/map-helper.png';
+    $placeholder = THEMEURI . 'images/rectangle.png';
     include( locate_template('inc/icons-svg.php') );
 
     ob_start(); ?>
 
     <div class="contact-info-shortcode<?php echo $custom_class?>">
+      <div class="inner">
+        <?php if ($show=='all' || $show=='') { 
 
-      <?php if ($show=='all' || $show=='') { 
-
-          $phNums = array('phone','fax');
-          foreach($options as $k=>$v) { 
-          ?>
-            
-            <?php if (in_array($k,$isPhNums)) { ?>
-              <span class="sc-<?php echo $k?> ph">
-                <a href="tel:<?php echo format_phone_number($v); ?>">
-                  <i class="customicon-<?php echo $k?>"></i><?php echo $v ?>
-                </a>
-              </span>
-            <?php } else { ?>
-
-              <?php if (in_array($k, $isEmails)) { ?>
-                <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
+            $phNums = array('phone','fax');
+            foreach($options as $k=>$v) { 
+            ?>
+              
+              <?php if (in_array($k,$isPhNums)) { ?>
+                <span class="sc-<?php echo $k?> ph">
+                  <a href="tel:<?php echo format_phone_number($v); ?>">
+                    <i class="customicon-<?php echo $k?>"></i><?php echo $v ?>
+                  </a>
+                </span>
               <?php } else { ?>
-                <?php if ($k=='map') { ?>
-                  <span class="sc-<?php echo $k?>">
-                    <?php echo $v ?>
-                    <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="mapdivHelper">
-                  </span>
+
+                <?php if (in_array($k, $isEmails)) { ?>
+                  <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
                 <?php } else { ?>
-                  <span class="sc-<?php echo $k?>"><?php echo $v ?></span>
+                  <?php if ($k=='map') { ?>
+                    <span class="sc-<?php echo $k?>">
+                      <?php echo $v ?>
+                      <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="mapdivHelper">
+                    </span>
+                  <?php } else { ?>
+                    <span class="sc-<?php echo $k?>"><?php echo $v ?></span>
+                  <?php } ?>
                 <?php } ?>
+
               <?php } ?>
 
             <?php } ?>
 
-          <?php } ?>
+        <?php } else { ?>
 
-      <?php } else { ?>
+          <?php if ($show) {
+            $args = explode(",",$show); 
+            foreach($args as $k) { 
+              $v = ( isset($options[$k]) && $options[$k] ) ? $options[$k] :'';
+              if($v) { ?>
 
-        <?php if ($show) {
-          $args = explode(",",$show); 
-          foreach($args as $k) { 
-            $v = ( isset($options[$k]) && $options[$k] ) ? $options[$k] :'';
-            if($v) { ?>
-
-                <?php if (in_array($k,$isPhNums)) { ?>
-                  <span class="sc-<?php echo $k?> ph">
-                    <a href="tel:<?php echo format_phone_number($v); ?>">
-                      <i class="customicon-<?php echo $k?>"></i><?php echo $v ?>
-                    </a>
-                  </span>
-                <?php } else { ?>
-
-                  <?php if (in_array($k, $isEmails)) { ?>
-                    <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
+                  <?php if (in_array($k,$isPhNums)) { ?>
+                    <span class="sc-<?php echo $k?> ph">
+                      <a href="tel:<?php echo format_phone_number($v); ?>">
+                        <i class="customicon-<?php echo $k?>"></i><?php echo $v ?>
+                      </a>
+                    </span>
                   <?php } else { ?>
-                    
 
-                    <?php if ($k=='map') { ?>
-                      <span class="sc-<?php echo $k?>">
-                        <?php echo $v ?>
-                        <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="mapdivHelper">
-                      </span>
+                    <?php if (in_array($k, $isEmails)) { ?>
+                      <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
                     <?php } else { ?>
-                      <span class="sc-<?php echo $k?>"><?php echo $v ?></span>
+                      
+
+                      <?php if ($k=='map') { ?>
+                        <span class="sc-<?php echo $k?>">
+                          <?php echo $v ?>
+                          <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="mapdivHelper">
+                        </span>
+                      <?php } else { ?>
+                        <span class="sc-<?php echo $k?>"><?php echo $v ?></span>
+                      <?php } ?>
+
                     <?php } ?>
 
                   <?php } ?>
 
-                <?php } ?>
-
+              <?php } ?>
             <?php } ?>
           <?php } ?>
+
         <?php } ?>
-
-      <?php } ?>
-
+      </div>
     </div>
 
     <?php
