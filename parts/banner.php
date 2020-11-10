@@ -103,7 +103,8 @@ if( is_front_page() ) {
 		  $extension = ( isset($path['extension']) && $path['extension'] ) ? strtolower($path['extension']) : '';
 		 	if($extension=='mp4') { ?>
 			<div class="hero-video-wrap">
-				<video id="mp4video" width="400" height="300" muted playsinline loop autoplay>
+				<!-- <video id="mp4video" width="400" height="300" muted playsinline loop autoplay> -->
+					<video id="mp4video" width="400" height="300" muted playsinline autoplay>
 					<source src="<?php echo $video; ?>" type="video/mp4">
 				</video>
 				<?php if ($tagline) { ?>
