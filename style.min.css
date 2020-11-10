@@ -2283,8 +2283,8 @@ div.post-edit-link a:hover{color:#cd9700;border-color:#cd9700}
 @media(min-width:820px){.process .process-info{width:50%}
 }.process .process-info h3.title{font-family:"Cinzel",serif;font-size:30px;font-weight:400;line-height:1.2;margin:0 0 20px;position:relative}
 .process .process-info h3.title span{display:inline-block;position:relative}
-.process .process-info h3.title .icon{display:inline-block;background-size:contain;background-position:0 0;background-repeat:no-repeat;position:relative}
-.process .process-info h3.title .icon i{display:block;width:120px;height:70px;position:relative}
+.process .process-info h3.title .icon{display:inline-block;position:relative}
+.process .process-info h3.title .icon i{display:block;width:120px;height:70px;position:relative;background-size:contain;background-position:0 0;background-repeat:no-repeat}
 .process .text{width:100%;float:left;position:relative}
 @media(min-width:820px){.process .text{border-top:2px solid #cd9700;padding-top:20px}
 }.process .text p{margin:0 0 20px}
@@ -2313,7 +2313,11 @@ div.post-edit-link a:hover{color:#cd9700;border-color:#cd9700}
 .process .middle-line:after{bottom:0;margin-bottom:-1.2vw}
 }@media screen and (max-width:819px){.process .wrapper{padding-left:40px}
 .process .process-info{padding-bottom:60px;padding-top:30px}
-.process .process-info h3.title{padding-left:6vw}
+.process .process-info h3.title{font-size:5vw;padding-left:10vw}
+.process .process-info.has-icon h3.title{padding-left:80px}
+.process .process-info.has-icon h3.title span.t1{padding-left:10px;min-height:50px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.process .process-info.has-icon h3.title span.icon{position:absolute;top:0;left:25px;height:100%;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.process .process-info.has-icon h3.title span.icon i{display:block;width:50px;height:50px}
 .process .process-info .text{border-top:2px solid #cd9700;padding-top:20px;padding-left:6vw}
 .process .process-info:last-child{padding-bottom:30px}
 .process .counter{width:50px;height:50px;left:-26px;font-size:1.5rem}

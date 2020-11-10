@@ -2805,15 +2805,15 @@ div.post-edit-link {
 			}
 			.icon {
 				display: inline-block;
-				background-size: contain;
-				background-position: 0 0;
-				background-repeat: no-repeat;
 				position: relative;
 				i {
 					display: block;
 					width: 120px;
 					height: 70px;
 					position: relative;
+					background-size: contain;
+					background-position: 0 0;
+					background-repeat: no-repeat;
 				}
 			}
 		}
@@ -2976,7 +2976,30 @@ div.post-edit-link {
     	padding-bottom: 60px;
     	padding-top: 30px;
     	h3.title {
-    		padding-left: 6vw;
+    		font-size: 5vw;
+    		padding-left: 10vw;
+    	}
+    	&.has-icon {
+    		h3.title {
+    			padding-left: 80px;
+    			span.t1 {
+    				padding-left: 10px;
+    				min-height: 50px;
+    				@include flexgroup-center();
+    			}
+    			span.icon {
+						position: absolute;
+						top: 0;
+						left: 25px;
+						height: 100%;
+						@include flexgroup-center();
+    				i {
+    					display: block;
+    					width: 50px;
+    					height: 50px;
+    				}
+    			}
+    		}
     	}
     	.text {
     		border-top: 2px solid $secondary;

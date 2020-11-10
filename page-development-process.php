@@ -47,7 +47,7 @@ get_header(); ?>
 										<h3 class="title">
 											<?php if ($icon) { ?>
 											<span class="t1"><?php echo $title ?></span>
-											<span class="icon" style="background-image:url('<?php echo $icon['url']?>');"><i></i></span>
+											<span class="icon"><i style="background-image:url('<?php echo $icon['url']?>');"></i></span>
 											<?php } else { ?>
 											<span class="t1"><?php echo $title ?></span>
 											<?php } ?>
