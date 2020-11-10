@@ -2798,6 +2798,24 @@ div.post-edit-link {
 			font-weight: 400;
 			line-height: 1.2;
 			margin: 0 0 20px;
+			position: relative;
+			span {
+				display: inline-block;
+				position: relative;
+			}
+			.icon {
+				display: inline-block;
+				background-size: contain;
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				position: relative;
+				i {
+					display: block;
+					width: 120px;
+					height: 70px;
+					position: relative;
+				}
+			}
 		}
 	}
 	.text {
@@ -2842,10 +2860,26 @@ div.post-edit-link {
 			margin-top: 2px;
 		}
 	}
-	.process-info:nth-child(odd) {
+	.process-info.odd {
 		h3.title {
 			@include tab {
-				padding-right: 5vw;
+				padding-right: 4vw;
+			}
+		}
+		&.has-icon {
+			h3.title {
+				@include tab {
+					padding-right: 2vw;
+					@include flexbox();
+					@include flexbox-align-items(center);
+					span.t1 {
+						display: inline-block;
+						padding-right: 20px;
+					}
+					.icon {
+						display: inline-block;
+					}
+				}
 			}
 		}
 		.text {
@@ -2860,16 +2894,31 @@ div.post-edit-link {
 		}
 	}
 
-	.process-info:nth-child(even) {
+	.process-info.even {
 		margin-top: 0;
 		@include tab {
 			padding-top: 80px;
-			margin-top: 10%;
+			margin-top: 14%;
 			left: -2px;
 		}
 		h3.title {
 			@include tab {
 				padding-left: 5vw;
+			}
+		}
+		&.has-icon {
+			h3.title {
+				@include tab {
+					@include flexbox();
+					@include flexbox-align-items(center);
+					span.t1 {
+						display: inline-block;
+						padding-right: 20px;
+					}
+					.icon {
+						display: inline-block;
+					}
+				}
 			}
 		}
 		.text {

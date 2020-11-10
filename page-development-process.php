@@ -26,6 +26,7 @@ get_header(); ?>
 						<div class="inner-pad fw-left">
 							<?php $b=0; $i=1; foreach ($process as $m) { 
 								$title = $m['title'];
+								$icon = $m['icon'];
 								$text = $m['description'];
 								if($title || $text) { 
 									$second = $i+2; 
@@ -39,10 +40,18 @@ get_header(); ?>
 									} else {
 										$sec = "0." . $second;
 									}
-									?>
-								<div class="process-info fadeIn wow" data-wow-delay="<?php echo $sec?>s">
+								$altclass = ($i % 2) ? 'odd':'even';
+									?> 
+								<div class="process-info <?php echo ($icon) ? 'has-icon':'no-icon'?> <?php echo $altclass ?>">
 									<?php if ($title) { ?>
-										<h3 class="title"><?php echo $title ?></h3>
+										<h3 class="title">
+											<?php if ($icon) { ?>
+											<span class="t1"><?php echo $title ?></span>
+											<span class="icon" style="background-image:url('<?php echo $icon['url']?>');"><i></i></span>
+											<?php } else { ?>
+											<span class="t1"><?php echo $title ?></span>
+											<?php } ?>
+										</h3>
 									<?php } ?>
 
 									<?php if ($text) { ?>

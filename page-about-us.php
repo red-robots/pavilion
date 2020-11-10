@@ -42,7 +42,7 @@ get_header(); ?>
 										$sec = "0." . $second;
 									}
 									?>
-								<div class="history fadeIn wow" data-wow-delay="<?php echo $sec?>s">
+								<div class="history">
 
 									<?php if ($year) { ?>
 										<div class="h-title">
