@@ -79,6 +79,33 @@ get_header(); ?>
 
 
 			<?php 
+				$osImg = get_field('our_story_image');
+				$osDesc = get_field('our_story');
+			 ?>
+			<div class="section-5-impact fw-left font18 <?php echo $section_4_class ?> half">
+				<div class="wrapper">
+					<div class="flexwrap section-inner">
+
+						<?php if ( $osImg ) { ?>
+							<div class="gallery-wrap">
+								<div class="imgbox">
+									<img src="<?php echo $osImg['sizes']['medium_large'] ?>" alt="<?php echo $osImg['title'] ?>">
+								</div>
+							</div>
+						<?php } ?>
+						
+						<?php if ( $osDesc ) { ?>
+							<div class="text-wrap">
+								<?php echo anti_email_spam($osDesc); ?>
+							</div>
+						<?php } ?>
+
+					</div>
+				</div>
+			</div>
+
+
+			<?php 
 				$bottomText = get_field("bottom_text");
 				$bottomButton = get_field("bottom_button");
 				if ( $bottomText ) { ?>
@@ -95,6 +122,8 @@ get_header(); ?>
 					</div>
 				</div>	
 			<?php } ?>
+
+				
 		
 			<?php endwhile; ?>
 	</main><!-- #main -->

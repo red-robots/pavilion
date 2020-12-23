@@ -7,7 +7,6 @@ get_header(); ?>
 <div id="primary" class="content-area-full default-template">
 	<main id="main" class="site-main" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
-			
 
 			<?php  
 			$contact_info_text = get_field("contact_info_text");

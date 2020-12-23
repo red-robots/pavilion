@@ -186,7 +186,7 @@ get_header(); ?>
 			$section_6_url = get_field("section_6_url");
 			?>
 			<?php if ( $section_6_title || $section_6_description ) { ?>
-				<div class="centered-text text-center fw-left font18">
+				<div class="centered-text text-center fw-left font18 sec-white">
 					<div class="wrapper">
 						<div class="wrapper-narrow">
 							<?php if ($section_6_title) { ?>
@@ -206,6 +206,8 @@ get_header(); ?>
 					</div>
 				</div>	
 			<?php } ?>
+
+			
 
 
 		

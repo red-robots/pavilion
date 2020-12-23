@@ -244,7 +244,11 @@
 							</div>
 					</div>
 				<?php } ?>
-
+				<div class="centered">
+					<div class="ctaButton">
+						<a href="<?php bloginfo('url'); ?>/why-pavilion" class="btn-theme white">Why Pavilion<span class="arrow"></span></a>
+					</div>	
+				</div>
 			</div>
 		</div>
 		<?php } ?>

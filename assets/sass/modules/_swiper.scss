@@ -19,6 +19,10 @@
 :root {
   --swiper-theme-color: #007aff;
 }
+.swiper-slide a {
+  display: block;
+  height: 100%;
+}
 .swiper-container {
   margin-left: auto;
   margin-right: auto;

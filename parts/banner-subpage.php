@@ -15,9 +15,10 @@ if($banner) { ?>
 			
 			<div class="text">
 				<div class="inner animated fadeIn">
+					<h1 class="pagetitle-off"><?php echo get_the_title(); ?></h1>
 					<?php if ($banner_title_large) { ?>
 					<h2 class="slideTitle">
-						<span class="small"><?php echo get_the_title(); ?></span>	
+							
 						<?php if ($banner_title_large) { ?>
 						<span class="large"><?php echo $banner_title_large ?></span>	
 						<?php } ?>

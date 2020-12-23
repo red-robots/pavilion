@@ -256,11 +256,13 @@ function display_contact_info( $atts ) {
     $phone = get_field("phone","option");
     $fax = get_field("fax","option");
     $gmap = get_field("gmap","option");
+    $emailz = get_field("email","option");
     $options = array(
       'address'=>$address,
       'phone'=>$phone,
       'fax'=>$fax,
-      'map'=>$gmap
+      'map'=>$gmap,
+      'email' => $emailz
     );
 
     $output = ''; 
@@ -288,7 +290,10 @@ function display_contact_info( $atts ) {
               <?php } else { ?>
 
                 <?php if (in_array($k, $isEmails)) { ?>
-                  <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
+                  <span class="sc-<?php echo $k?>">
+                    <a href="mailto:<?php echo antispambot($v,1); ?>">
+                        <i class="customicon-email"></i> <?php echo antispambot($v); ?>
+                    </a></span>
                 <?php } else { ?>
                   <?php if ($k=='map') { ?>
                     <span class="sc-<?php echo $k?>">
@@ -321,7 +326,11 @@ function display_contact_info( $atts ) {
                   <?php } else { ?>
 
                     <?php if (in_array($k, $isEmails)) { ?>
-                      <span class="sc-<?php echo $k?>"><a href="mailto:<?php echo antispambot($v,1); ?>"><?php echo antispambot($v); ?></a></span>
+                      <span class="sc-<?php echo $k?>">
+                        <a href="mailto:<?php echo antispambot($v,1); ?>">
+                            <i class="fal fa-envelope"></i> <?php echo antispambot($v); ?>
+                        </a>
+                    </span>
                     <?php } else { ?>
                       
 

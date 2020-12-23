@@ -14,6 +14,10 @@ if( is_front_page() ) {
 			$count = ($slides) ? count($slides) : 0; 
 		}
 		$slidesId = ($count>1) ? 'slideshow':'static-banner';
+
+		// echo '<pre>';
+		// print_r($slides);
+		// echo '</pre>';
 		
 
 		if( is_front_page() ) {
@@ -34,7 +38,9 @@ if( is_front_page() ) {
 									</div>
 								</div>
 								<?php } ?>
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
+								<?php if($website) { ?><a href="<?php echo $website; ?>"><?php } ?>
+									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
+								<?php if($website) { ?></a><?php } ?>
 							</div>
 
 						<?php } else { ?>
@@ -42,8 +48,14 @@ if( is_front_page() ) {
 							<?php foreach ($slides as $img) { 
 									$title = $img['title'];
 									$caption = $img['caption'];
+									$attachment = $img['ID'];
+									$website = get_field('website', $attachment);
+									// echo '<pre>';
+									// print_r($website);
+									// echo '</pre>';
 								?>
 			    				<div class="swiper-slide slideItem" style="background-image:url('<?php echo $img['url'] ?>');">
+			    					<?php if($website) { ?><a href="<?php echo $website; ?>" target="_blank"><?php } ?>
 			    					<?php if ($caption) { ?>
 			    					<div class="slideCaption">
 				    					<div class="slideInside">
@@ -58,7 +70,9 @@ if( is_front_page() ) {
 			    						</div>
 			    					</div>
 			    					<?php } ?>
-			    					<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
+			    					
+			    						<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
+			    					<?php if($website) { ?></a><?php } ?>
 			    				</div>
 			    			<?php } ?>
 

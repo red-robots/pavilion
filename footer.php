@@ -7,6 +7,8 @@
 	$address_line2 = get_field("address_line2","option");
 	$phone = get_field("phone","option");
 	$fax = get_field("fax","option");
+	$email = get_field("email","option");
+	$email = antispambot($email);
 	$addressArr = array($address_line1,$address_line2);
 	$address = ($addressArr && array_filter($addressArr)) ? implode(", ",array_filter($addressArr)) : '';
 	?>
@@ -33,6 +35,10 @@
 						<?php } ?>
 						<?php if ($fax) { ?>
 							<span class="fax">Fax: <a href="tel:<?php echo format_phone_number($fax) ?>"><?php echo $fax; ?></a></span>
+						<?php } ?>
+						<span class="divider"></span>
+						<?php if ($email) { ?>
+							<span class="email">Email: <a href="tel:<?php echo format_phone_number($fax) ?>"><?php echo $email; ?></a></span>
 						<?php } ?>
 					</div>	
 					<?php } ?>

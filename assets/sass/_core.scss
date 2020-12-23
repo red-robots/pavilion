@@ -20,8 +20,18 @@
 }
 .customicon-fax:before{content:'\0041';}
 .customicon-phone:before{content:'\0042';}
+.customicon-email:before{content:'\0043';}
 
+.sc-email  {
+	a {
+		text-decoration: none;
+		color: $primary;
+	}
+	i, svg {
+		color: $secondary;
+	}
 
+}
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	overflow-wrap: normal;
     word-wrap: normal;
@@ -126,6 +136,19 @@ body {
 	position: relative;
 	@include flexgroup();
 }
+h1.pagetitle-off {
+	text-indent: -99000px;
+	height: 2px;
+}
+.centered {
+	width: 100%;
+	text-align: center;
+}
+.sec-white,
+.intro .sec-white,
+.centered-text .sec-white {
+	background-color: #fff !important;
+}
 .site-header {
 	position: relative;
 	z-index: 500;
@@ -185,7 +208,7 @@ body {
 }
 .main-navigation ul > li > a {
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 600;
 	color: $primary;
 	text-transform: uppercase;
 	padding: 5px 20px;
@@ -748,13 +771,13 @@ body {
 	float: left;
 	position: relative;
 	overflow:hidden;
-	height: 400px;
+	height: 300px;
 	background-color: $primary;
 	@include tab {
-		height: 500px;
+		height: 300px;
 	}
 	@include mid {
-		height: 650px;
+		height: 450px;
 	}
 	.slideImage {
 		width: 100%;
@@ -1582,7 +1605,11 @@ body.slide-text-open {
 		}
 	}
 }
-
+.section-3.dev-process {
+	h2:after {
+		margin: 20px auto 0;
+	}
+}
 .section-4 {
 	background: $light-gray;
 	position: relative;
@@ -2292,7 +2319,7 @@ body.slide-text-open {
 			float: left;
 			font-size: 12px;
 			font-weight: 300;
-			color: $secondary;
+			color: $primary;
 		}
 		a.info:hover {
 			box-shadow: 0 6px 18px rgba(0,0,0,0.2);
