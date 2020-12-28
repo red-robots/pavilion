@@ -139,6 +139,7 @@ body {
 h1.pagetitle-off {
 	text-indent: -99000px;
 	height: 2px;
+	margin: 0;
 }
 .centered {
 	width: 100%;
@@ -2502,7 +2503,24 @@ div.post-edit-link {
     }
 	}
 }
-
+.sc-email {display: inline-block;}
+.flex-contact {
+	width: 100%;
+	
+	@include tab {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		flex-basis: 40%;
+		div {
+			width: 40%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
 .contact-info-shortcode {
 	&.left, &.right {
 		width: 100%;

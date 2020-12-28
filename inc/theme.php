@@ -32,7 +32,7 @@ function my_login_logo() {
 }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
-// Change Link
+// Change Link 
 function loginpage_custom_link() {
   return get_site_url();
 }
@@ -43,6 +43,20 @@ function bella_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'bella_login_logo_url_title' );
 
+/*-------------------------------------
+  
+  Prevent Author Lookup
+
+---------------------------------------*/
+function redirect_to_home_if_author_parameter() {
+
+  $is_author_set = get_query_var( 'author', '' );
+  if ( $is_author_set != '' && !is_admin()) {
+    wp_redirect( home_url(), 301 );
+    exit;
+  }
+}
+add_action( 'template_redirect', 'redirect_to_home_if_author_parameter' );
 /*-------------------------------------
 	Adds Options page for ACF.
 ---------------------------------------*/

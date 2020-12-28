@@ -10,12 +10,24 @@ get_header(); ?>
 
 			<?php  
 			$contact_info_text = get_field("contact_info_text");
+			$gal = get_field('gallery');
+			$img = '';
+			// echo '<pre>';
+			// print_r($gal);
+			// echo '</pre>';
 			?>
 			<?php if ( $contact_info_text ) { ?>
 				<div class="contactdiv intro fw-left text-center">
 					<div class="wrapper">
-						<div class="flexwrap font18">
-							<?php echo anti_email_spam($contact_info_text); ?>
+						<div class="flex-contact">
+							<div class="flexwrap font18">
+								<?php echo anti_email_spam($contact_info_text); ?>
+							</div>
+							<div class="gallery">
+								<?php foreach ($gal as $img) { ?>
+									<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>" >
+								<?php } ?>
+							</div>
 						</div>
 					</div>
 				</div>	
@@ -27,10 +39,12 @@ get_header(); ?>
 			if($contact_form) { ?>
 			<div class="contact-form-section fw-left">
 				<div class="wrapper">
+
 					<div class="wrapper-narrow font18">
 						<?php echo anti_email_spam($contact_form); ?>
 						<div class="custom-form-button"></div>
 					</div>
+					
 				</div>
 			</div>
 			<?php } ?>
