@@ -44,19 +44,18 @@ if( is_front_page() ) {
 							</div>
 
 						<?php } else { ?>
-
 							<?php foreach ($slides as $img) { 
 									$title = $img['title'];
 									$caption = $img['caption'];
 									$attachment = $img['ID'];
 									$website = get_field('website', $attachment);
 									// echo '<pre>';
-									// print_r($website);
+									// print_r($img);
 									// echo '</pre>';
 								?>
 			    				<div class="swiper-slide slideItem" style="background-image:url('<?php echo $img['url'] ?>');">
 			    					<?php if($website) { ?><a href="<?php echo $website; ?>" target="_blank"><?php } ?>
-			    					<?php if ($caption) { ?>
+			    					<?php if ($title) { ?>
 			    					<div class="slideCaption">
 				    					<div class="slideInside">
 				    						<div class="slideMid animated">

@@ -6,7 +6,7 @@
  *
  * @package bellaworks
  */
-
+add_image_size('evencrop', 800, 550, array('center', 'center'));
 /*-------------------------------------
   Custom client login, link and title.
 ---------------------------------------*/

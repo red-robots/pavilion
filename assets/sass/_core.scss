@@ -528,6 +528,9 @@ h1.pagetitle-off {
 	overflow:hidden;
 	height: 340px;
 	background-color: $primary;
+	a {
+		text-decoration: none;
+	}
 	@include tab {
 		height: 500px;
 	}
@@ -601,6 +604,7 @@ h1.pagetitle-off {
 				line-height: 1.2;
 				margin: 0 0;
 				text-transform: uppercase;
+				a {text-decoration: none;}
 			}
 			.slideText {
 				font-family: $font_primary;
@@ -1091,7 +1095,30 @@ body.slide-text-open {
 		}
 	}
 }
-
+.home-row-2-b {
+	width: 100%;
+	background: $light-gray;
+	position: relative;
+	display: flex;
+	.inner {
+		width: 100%;
+		padding: 20px;
+		@media screen and (min-width: $tabwidth) {
+			width: 70%;
+			padding: 60px 5% ;
+		}
+	}
+	.inner-right {
+		width: 100%;
+		padding: 20px;
+		color: #fff;
+		@media screen and (min-width: $tabwidth) {
+			width: 30%;
+			background: $gray;
+			padding: 60px 5%;
+		}
+	}
+}
 .home-row-3  {
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -1464,6 +1491,44 @@ body.slide-text-open {
 		margin-top: 40px;
 		@include tab {
 			margin-top: 60px;
+		}
+	}
+	.locations {
+		width: 100%;
+		padding: 40px 0 0 0;
+		@media screen and (min-width: $tabwidth) {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			padding: 60px 0 0 0;
+		}
+		.location {
+			width: 100%;
+			position: relative;
+			margin: 0 0 40px 0;
+			line-height: 0;
+			img {
+				width: 100%;
+			}
+			@media screen and (min-width: $tabwidth) {
+				width: 45%;
+			}
+			.img-desc {
+				width: 100%;
+				position: absolute;
+				background-color: rgba($primary, .6);
+				color: #fff;
+				bottom: 0;
+				left: 0;
+				max-height: 100%;
+				padding: 10px;
+				text-align: center;
+				line-height: 1.1;
+				h3 {
+					margin: 0 0 15px 0;
+				}
+			}
 		}
 	}
 }
@@ -2819,14 +2884,14 @@ div.post-edit-link {
 
 /* Process */
 .process {
-	padding-top: 80px;
+	// padding-top: 80px;
 	padding-bottom: 80px;
 	@include tab {
-		padding-top: 100px;
+		// padding-top: 100px;
 		padding-bottom: 100px;
 	}
 	@include desk {
-		padding-top: 130px;
+		// padding-top: 130px;
 		padding-bottom: 140px;
 	}
 	.process-info {

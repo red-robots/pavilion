@@ -5,11 +5,13 @@
 		$section_2_description = get_field("section_2_description");
 		$section_2_link_text = get_field("section_2_link_text");
 		$section_2_link_url = get_field("section_2_link_url");
+		$section_2_quote = get_field("section_2_quote");
 		?>
 
 		<?php /* ROW 2 */ ?>
 		<?php if ($section_2_title || $section_2_description) { ?>
-		<div class="home-row home-row-2">
+		<div class="home-row home-row-2-b">
+			<div class="inner">
 			<div class="wrapper row-2-content">
 				<div class="flexwrap">
 					<div class="left fadeIn wow">
@@ -30,6 +32,10 @@
 
 				</div>
 				
+			</div>
+			</div>
+			<div class="inner-right">
+				<?php echo $section_2_quote; ?>
 			</div>
 		</div>
 		<?php } ?>
@@ -260,6 +266,10 @@
 		$section_7_description = get_field("section_7_description");
 		$section_7_link_text = get_field("section_7_link_text");
 		$section_7_url = get_field("section_7_url");
+		$locations = get_field('locations');
+		// echo '<pre>';
+		// print_r($locations);
+		// echo '</pre>';
 		if( $section_7_title || $section_7_description) { ?>
 		<div class="home-row home-row-7">
 			<div class="wrapper text-center">
@@ -278,6 +288,21 @@
 					</div>	
 					<?php } ?>
 				</div>
+				<?php if( $locations ) { ?>
+					<div class="locations">
+						<?php foreach ( $locations as $img ) { ?>
+							
+								<div class="location">
+									<img src="<?php echo $img['sizes']['evencrop']; ?>" alt="<?php echo $img['alt']; ?>">
+									<div class="img-desc">
+										<?php if($img['title']){ echo '<h3>'.$img['title'].'</h3>'; } ?>
+										<?php if($img['description']){echo $img['description'];} ?>
+									</div>
+								</div>
+							
+						<?php } ?>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 		<?php } ?>

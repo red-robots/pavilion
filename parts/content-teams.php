@@ -80,7 +80,7 @@ $exclude_teams = get_field("exclude_from_the_list",$pageId);
 	                  <span class="photo <?php echo ($image) ? 'yes':'no'; ?>"<?php echo $style ?>>
 	                    <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
 	                  </span>
-	                  <span class="text">
+	                  <span class="text js-blocks">
                       <span class="team-name"><?php echo $name ?></span>
                       <?php if ($jobtitle) { ?>
                       <span class="team-title"><?php echo $jobtitle ?></span>
