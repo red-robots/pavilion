@@ -770,7 +770,12 @@ h1.pagetitle-off {
 
 	}
 }
-
+.swiper-container.subpage {
+	height: auto;
+	.slideCaption {
+		padding-left: 0;
+	}
+}
 .subpage-banner {
 	width: 100%;
 	float: left;
@@ -1743,6 +1748,30 @@ body.slide-text-open {
 			width: 65%;
 		}
 	}
+	.col-left-w-img {
+		width: 100%;
+		float: left;
+		@include tab {
+			width: 32%;
+			margin-left: 3%;
+		}
+		@include desk {
+			width: 42%;
+		}
+	}
+	.col-left-img {
+		width: 100%;
+		float: left;
+		@include tab {
+			width: 20%;
+		}
+		@include desk {
+			width: 20%;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
 	.col-right {
 		width: 100%;
 		float: left;
@@ -2231,7 +2260,7 @@ body.slide-text-open {
 			width: 100%;
 			float: left;
 			padding-left: 15vw;
-    	padding-right: 0;
+    		padding-right: 0;
 			@include xs {
 				width: 65%;
 				padding-left: 50px;
@@ -2244,6 +2273,10 @@ body.slide-text-open {
 			@include mid {
 				padding-left: 6vw;
 				padding-right: 6vw;
+			}
+			&.the-ceo {
+				// max-height: 200px;
+				// overflow: hidden;
 			}
 		}
 	}
@@ -3445,6 +3478,135 @@ div.post-edit-link {
 		}
 	}
 }
+
+
+.section-5-our-story {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+	@include tab {
+		padding-top: 20px;
+		padding-bottom: 100px;
+	}
+	.gallery-wrap,
+	.text-wrap,
+	.fullwidth-image {
+		width: 100%;
+		float: left;
+		position: relative;
+		z-index: 10;
+	}
+	.gallery-wrap {
+		margin-bottom: 30px;
+		&.spacer {
+			display: none;		
+			@include tab {
+				display: block;		
+			}
+		}
+	}
+	.text-wrap {
+		h2 {
+			font-family: $font_secondary;
+			font-size: 30px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin: 0 0 25px;
+			position: relative;
+			@include tab {
+				font-size: 40px;
+			}
+			&:after {
+				content: "";
+				display: block;
+				width: 12%;
+				height: 2px;
+				background: $secondary;
+				margin: 20px 0 0;
+			}
+		}
+	}
+	.imgbox {
+		width: 100%;
+		float: left;
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.fullwidth-image {
+		margin: 30px 0 40px;
+		@include tab {
+			margin: 60px 0;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.flexwrap.section-inner {
+		background: $light-gray;
+		padding-top: 0;
+		padding-bottom: 50px;
+		position: relative;
+		@include tab {
+			padding-top: 80px;
+			padding-bottom: 80px;
+			// &:before {
+			// 	content:"";
+			// 	display: block;
+			// 	width: 7vw;
+			// 	height: 100%;
+			// 	position: absolute;
+			// 	top: 0;
+			// 	left: 0;
+			// 	background: #FFF;
+			// 	z-index: 2;
+			// }
+		}
+		&:after {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: $secondary;
+		}
+		
+		
+	}
+	&.half {
+		.gallery-wrap {
+			width: 100%;
+			@include tab {
+				width: 50%;
+				margin: 0 auto 30px auto;
+			}
+			&.spacer {
+				display: none;
+				@include tab {
+					display: block;
+				}
+			}
+		}
+		.text-wrap {
+			width: 100%;
+			padding-right: 30px;
+			padding-left: 30px;
+			text-align: center;
+			@include tab {
+				width: 70%;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
 
 #staffData {
 	width: 100%;

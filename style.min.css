@@ -1403,6 +1403,8 @@ h1.pagetitle-off{text-indent:-99000px;height:2px;margin:0}
 .hero-video-wrap .videoCaption .vidTitle{display:block;width:100%;font-size:20px;font-weight:300;line-height:1.2;margin:0;text-transform:uppercase}
 .hero-video-wrap .videoCaption .vidTitle u{font-style:normal;display:inline-block;position:relative;text-decoration:none}
 .hero-video-wrap .videoCaption .vidTitle u:after{content:"";display:block;width:100%;height:2px;background:#cd9700}
+.swiper-container.subpage{height:auto}
+.swiper-container.subpage .slideCaption{padding-left:0}
 .subpage-banner{width:100%;float:left;position:relative;overflow:hidden;height:300px;background-color:#15284b}
 .subpage-banner .slideImage{width:100%;height:100%;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#15284b}
 .subpage-banner .slideImage img.placeholder{width:100%;height:auto;float:left;display:none}
@@ -1538,6 +1540,9 @@ body.slide-text-open{overflow:hidden}
 .section-4 .section-header .small-title{margin:0;font-size:15px;font-weight:400;line-height:1.2;color:#cd9700;text-transform:uppercase;letter-spacing:1px}
 .section-4 .inner{width:100%;float:left;position:relative}
 .section-4 .col-left{width:100%;float:left}
+.section-4 .col-left-w-img{width:100%;float:left}
+.section-4 .col-left-img{width:100%;float:left}
+.section-4 .col-left-img img{max-width:100%}
 .section-4 .col-right{width:100%;float:left;position:relative}
 .section-4 .col-right .button{margin-top:30px;width:100%;float:left}
 .section-with-icons{background:#15284b;color:#FFF;padding-top:50px;padding-bottom:50px}
@@ -1717,6 +1722,21 @@ div.post-edit-link a:hover{color:#cd9700;border-color:#cd9700}
 .section-5-impact.half .gallery-wrap{width:100%}
 .section-5-impact.half .gallery-wrap.spacer{display:none}
 .section-5-impact.half .text-wrap{width:100%;padding-right:30px;padding-left:30px}
+.section-5-our-story{padding-top:20px;padding-bottom:20px;margin-bottom:50px}
+.section-5-our-story .gallery-wrap,.section-5-our-story .text-wrap,.section-5-our-story .fullwidth-image{width:100%;float:left;position:relative;z-index:10}
+.section-5-our-story .gallery-wrap{margin-bottom:30px}
+.section-5-our-story .gallery-wrap.spacer{display:none}
+.section-5-our-story .text-wrap h2{font-family:"Cinzel",serif;font-size:30px;font-weight:400;line-height:1.2;margin:0 0 25px;position:relative}
+.section-5-our-story .text-wrap h2:after{content:"";display:block;width:12%;height:2px;background:#cd9700;margin:20px 0 0}
+.section-5-our-story .imgbox{width:100%;float:left;margin-bottom:20px}
+.section-5-our-story .imgbox img{width:100%;height:auto;float:left}
+.section-5-our-story .fullwidth-image{margin:30px 0 40px}
+.section-5-our-story .fullwidth-image img{width:100%;height:auto;float:left}
+.section-5-our-story .flexwrap.section-inner{background:#f5f5f5;padding-top:0;padding-bottom:50px;position:relative}
+.section-5-our-story .flexwrap.section-inner:after{content:"";display:block;width:100%;height:3px;position:absolute;bottom:0;left:0;background:#cd9700}
+.section-5-our-story.half .gallery-wrap{width:100%}
+.section-5-our-story.half .gallery-wrap.spacer{display:none}
+.section-5-our-story.half .text-wrap{width:100%;padding-right:30px;padding-left:30px;text-align:center}
 #staffData{width:100%;float:left}
 #staffData .pageheader{position:relative;margin-bottom:20px}
 #staffData .pageheader:after{content:"";display:block;width:100%;height:3px;background:#cd9700;margin:15px 0 0}
@@ -1827,6 +1847,8 @@ body.modal-open{overflow:hidden}
 .section-4{padding-top:100px;padding-bottom:100px}
 .section-4:after{content:"";display:block;width:20vw;height:100%;position:absolute;top:0;right:0;background:#7d8491}
 .section-4 .col-left{width:55%}
+.section-4 .col-left-w-img{width:32%;margin-left:3%}
+.section-4 .col-left-img{width:20%}
 .section-4 .col-right .button{position:absolute;bottom:20px;right:5vw;width:30%;margin-top:0}
 .section-with-icons{padding-top:100px;padding-bottom:100px}
 .section-with-icons.single-row{padding-top:80px;padding-bottom:0}
@@ -1916,6 +1938,14 @@ body.modal-open{overflow:hidden}
 .section-5-impact.half .gallery-wrap{width:30%;margin-bottom:0}
 .section-5-impact.half .gallery-wrap.spacer{display:block}
 .section-5-impact.half .text-wrap{width:70%;padding-right:5vw;padding-left:5vw}
+.section-5-our-story{padding-top:20px;padding-bottom:100px}
+.section-5-our-story .gallery-wrap.spacer{display:block}
+.section-5-our-story .text-wrap h2{font-size:40px}
+.section-5-our-story .fullwidth-image{margin:60px 0}
+.section-5-our-story .flexwrap.section-inner{padding-top:80px;padding-bottom:80px}
+.section-5-our-story.half .gallery-wrap{width:50%;margin:0 auto 30px auto}
+.section-5-our-story.half .gallery-wrap.spacer{display:block}
+.section-5-our-story.half .text-wrap{width:70%;margin:0 auto}
 #staffData .pageheader{margin-bottom:25px}
 #staffData .pageheader:after{width:10%}
 #staffData .jobtitle{font-size:15px}
@@ -1950,6 +1980,8 @@ body.modal-open{overflow:hidden}
 .intro,.centered-text{padding-top:120px;padding-bottom:120px}
 .section-3{padding-top:120px;padding-bottom:120px}
 .section-4 .col-left{width:65%}
+.section-4 .col-left-w-img{width:42%}
+.section-4 .col-left-img{width:20%}
 .section-4 .col-right .button{right:-5vw}
 .section-with-icons{padding-top:100px;padding-bottom:120px}
 .section-with-icons.single-row{padding-top:100px;padding-bottom:0}

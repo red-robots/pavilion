@@ -82,7 +82,7 @@ get_header(); ?>
 				$osImg = get_field('our_story_image');
 				$osDesc = get_field('our_story');
 			 ?>
-			<div class="section-5-impact fw-left font18 <?php echo $section_4_class ?> half">
+			<div class="section-5-our-story fw-left font18 <?php echo $section_4_class ?> half">
 				<div class="wrapper">
 					<div class="flexwrap section-inner">
 

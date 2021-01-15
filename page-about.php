@@ -82,7 +82,12 @@ get_header(); ?>
 
 
 			<?php
+			$xClass = '';
 			$section_4_title = get_field("section_4_title");
+			$section_4_img = get_field("section_4_image");
+			if( $section_4_img ) {
+				$xClass = '-w-img';
+			}
 			$section_4_secondary_title = get_field("section_4_secondary_title");
 			$section_4_description = get_field("section_4_description");
 			$section_4_link_text = get_field("section_4_link_text");
@@ -92,8 +97,12 @@ get_header(); ?>
 					<div class="wrapper">
 
 						<div class="inner">
-
-							<div class="col-left">
+							<?php if( $section_4_img ) { ?>
+								<div class="col-left-img">
+									<img src="<?php echo $section_4_img['url']; ?>">
+								</div>
+							<?php } ?>
+							<div class="col-left<?php echo $xClass; ?>">
 								<?php if ( $section_4_title || $section_4_secondary_title ) { ?>
 									<div class="section-header">
 										<?php if ($section_4_title) { ?>

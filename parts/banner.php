@@ -139,39 +139,64 @@ if( is_front_page() ) {
 <?php } else { /* SUBPAGE BANNER */ ?>
 
 	<?php 
+	$count = 0;
 	$banner = get_field("banner");
 	$banner_title_small = get_field("banner_title_small");
 	$banner_title_large = get_field("banner_title_large");
 	$banner_description = get_field("banner_description");
+	if( isset($banner['url']) && $banner['url'] ) {
+		$count = 0;
+	} else {
+		$count = ($banner) ? count($banner) : 0; 
+	}
+	$slidesId = ($count>1) ? 'slideshow':'static-banner';
+
+	// echo '<pre>';
+	// 	print_r($banner);
+	// 	echo '</pre>';
 	if($banner) { ?>
-	<div class="subpage-banner">
-		<div class="slideImage" style="background-image:url('<?php echo $banner['url']?>');">
-			<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
-		</div>
-
-		<?php if ( ($banner_title_small || $banner_title_large) || $banner_description ) { ?>
-			<div class="slideCaption">
-				
-				<div class="text">
-					<div class="inner animated fadeIn">
-						<h1 class="pagetitle-off"><?php echo get_the_title(); ?></h1>
-						<h2 class="slideTitle">
-							<!-- <span class="small"><?php echo get_the_title(); ?></span> -->	
-							<?php if ($banner_title_large) { ?>
-							<span class="large"><?php echo $banner_title_large ?></span>	
-							<?php } ?>
-						</h2>	
-
-						<?php if ($banner_description) { ?>
-						<div class="slideText"><?php echo $banner_description ?></div>	
-						<?php } ?>
+	<div id="<?php echo $slidesId ?>" class="swiper-container banner-wrap fw subpage">
+		<div class="swiper-wrapper">
+		<?php foreach ($banner as $img) { ?>
+			<div class="swiper-slide slideItem" >
+				<div class="subpage-banner">
+					<div class="slideImage" style="background-image:url('<?php echo $img['url']?>');">
+						<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
 					</div>
+
+					<?php if ( ($banner_title_small || $banner_title_large) || $banner_description ) { ?>
+						<div class="slideCaption">
+							
+							<div class="text">
+								<div class="inner animated fadeIn">
+									<h1 class="pagetitle-off"><?php echo get_the_title(); ?></h1>
+									<h2 class="slideTitle">
+										<!-- <span class="small"><?php echo get_the_title(); ?></span> -->	
+										<?php if ($banner_title_large) { ?>
+										<span class="large"><?php echo $banner_title_large ?></span>	
+										<?php } ?>
+									</h2>	
+
+									<?php if ($banner_description) { ?>
+									<div class="slideText"><?php echo $banner_description ?></div>	
+									<?php } ?>
+								</div>
+							</div>
+						</div>
+						</div>
+					<?php } ?>
+
 				</div>
 
-			</div>
-		<?php } ?>
+	<?php } ?>
 
 	</div>
+	<?php if ($count>1) { ?>
+	    <div class="swiper-pagination"></div>
+	    <div class="swiper-button-next"></div>
+	    <div class="swiper-button-prev"></div>
 	<?php } ?>
+	</div>
+<?php } ?>
 
 <?php } ?>

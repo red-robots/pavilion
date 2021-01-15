@@ -15,13 +15,18 @@ get_header(); ?>
 
 				<?php
 				$featteam = get_field("featured_team");
+				// echo '<pre>';
+				// print_r($featteam);
+				// echo '</pre>';
 				if($featteam) { 
 					$staff_id = $featteam->ID;
-					$staff_details = $featteam->post_content;
-					$staff_details = apply_filters('the_content', $staff_details);
+					$staff_details = get_field('excerpt', $staff_id);
+					//$staff_details = $featteam->post_content;
+					// $staff_details = apply_filters('the_content', $staff_details);
 					$staff_image = get_field("photo",$staff_id);
 					$jobtitle = get_field("jobtitle",$staff_id);
 					$feat_class = ($staff_details && $staff_image) ? 'half':'full';
+					$link = get_permalink( $featteam->ID );
 					?>
 
 					<div class="page-content ceo-section-team fw-left <?php echo $feat_class ?>">
@@ -30,7 +35,7 @@ get_header(); ?>
 								<div class="staff-image"><img src="<?php echo $staff_image['url'] ?>" alt="<?php echo $staff_image['title'] ?>"></div>
 							<?php } ?>
 							<?php if ($staff_details) { ?>
-								<div class="staff-details">
+								<div class="staff-details the-ceo">
 									<div class="staff-title">
 										<?php if ( is_user_logged_in() ) { ?>
 										<div class="post-edit-link"><?php echo edit_post_link('Edit','','',$staff_id,'edit-link'); ?></div>
@@ -42,6 +47,11 @@ get_header(); ?>
 									</div>
 									
 									<?php echo anti_email_spam($staff_details) ?>
+									<div class="read-full-bio">
+										<a data-url="<?php echo $link ?>" href="<?php echo $link ?>" class="info staff-page-info">
+											Read Full Bio
+										</a>
+									</div>
 								</div>
 							<?php } ?>
 						</div>
