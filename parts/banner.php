@@ -155,7 +155,7 @@ if( is_front_page() ) {
 	// 	print_r($banner);
 	// 	echo '</pre>';
 	if($banner) { ?>
-	<div id="<?php echo $slidesId ?>" class="swiper-container banner-wrap fw subpage">
+	<div id="<?php echo $slidesId ?>" class="swiper-container banner-wrap fw subpage b-pulled-from-banner">
 		<div class="swiper-wrapper">
 		<?php foreach ($banner as $img) { ?>
 			<div class="swiper-slide slideItem" >

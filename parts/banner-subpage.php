@@ -5,7 +5,7 @@ $banner_title_large = get_field("section_1_tagline");
 $banner_description = get_field("section_1_description");
 $section_1_excerpt = get_field("section_1_excerpt");
 if($banner) { ?>
-<div class="subpage-banner">
+<div class="subpage-banner b-pulled-from-banner-subpage">
 	<div class="slideImage" style="background-image:url('<?php echo $banner['url']?>');">
 		<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
 	</div>

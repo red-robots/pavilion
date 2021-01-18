@@ -68,11 +68,16 @@ get_header(); ?>
 
 
 			<?php
+			$count = 0;
 			$section_4_text1 = get_field("section_4_text");
 			$section_4_text2 = get_field("section_4_text2");
 			$section_4_gallery = get_field("section_4_gallery");
 			$section_4_class = ( $section_4_text1 && $section_4_gallery ) ? 'half':'full';
 			$section_4_fullwidth_image = get_field("section_4_fullwidth_image");
+			// echo '<pre>';
+			// print_r($section_4_fullwidth_image);
+			// echo '</pre>';
+			$slidesId = ($count>1) ? 'slideshow':'static-banner';
 			?>
 			<?php if ( $section_4_text1 || $section_4_gallery ) { ?>
 				<div class="section-4-impact fw-left font18 <?php echo $section_4_class ?>">
@@ -96,8 +101,21 @@ get_header(); ?>
 							<?php } ?>
 
 							<?php if ( $section_4_fullwidth_image ) { ?>
-								<div class="fullwidth-image">
-									<img src="<?php echo $section_4_fullwidth_image['url'] ?>" alt="<?php echo $section_4_fullwidth_image['title'] ?>" class="fw-image">
+								<div id="slideshow" class="swiper-container banner-wrap fw subpage b-pulled-from-banner slideshow-impact">
+									<div class="swiper-wrapper">
+										<?php foreach(  $section_4_fullwidth_image as $pp ) { ?>
+											<div class="swiper-slide slideItem">
+										<!-- <div class="fullwidth-image"> -->
+												<img src="<?php echo $pp['url'] ?>" alt="<?php echo $pp['title'] ?>" class="fw-image">
+										<!-- </div> -->
+											</div>
+										<?php } ?>
+									</div>
+									<?php //if ($count>1) { ?>
+									    <div class="swiper-pagination"></div>
+									    <div class="swiper-button-next"></div>
+									    <div class="swiper-button-prev"></div>
+									<?php //} ?>
 								</div>
 							<?php } ?>
 

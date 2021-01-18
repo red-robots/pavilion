@@ -1405,6 +1405,7 @@ h1.pagetitle-off{text-indent:-99000px;height:2px;margin:0}
 .hero-video-wrap .videoCaption .vidTitle u:after{content:"";display:block;width:100%;height:2px;background:#cd9700}
 .swiper-container.subpage{height:auto}
 .swiper-container.subpage .slideCaption{padding-left:0}
+.slideshow-impact{z-index:100}
 .subpage-banner{width:100%;float:left;position:relative;overflow:hidden;height:300px;background-color:#15284b}
 .subpage-banner .slideImage{width:100%;height:100%;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#15284b}
 .subpage-banner .slideImage img.placeholder{width:100%;height:auto;float:left;display:none}
