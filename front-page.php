@@ -66,8 +66,16 @@
 									<div class="bg" style="background-image:url('<?php echo $g['url']?>')"></div>
 									<?php if ($boxClass=='even') { ?>
 										<img src="<?php echo $square ?>" alt="" aria-hidden="true" class="placeholder rectangle">
+										<div class="img-desc">
+											<?php if($g['title']){ echo '<h3>'.$g['title'].'</h3>'; } ?>
+											<?php if($g['description']){echo $g['description'];} ?>
+										</div>
 									<?php } else { ?>
 										<img src="<?php echo $square ?>" alt="" aria-hidden="true" class="placeholder square">
+										<div class="img-desc">
+											<?php if($g['title']){ echo '<h3>'.$g['title'].'</h3>'; } ?>
+											<?php if($g['description']){echo $g['description'];} ?>
+										</div>
 									<?php } ?>
 								</div>
 							</div>

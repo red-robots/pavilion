@@ -1462,6 +1462,8 @@ body.slide-text-open{overflow:hidden}
 .home-row-3 .gallery-inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-left:0}
 .home-row-3 .imagebox{position:relative;width:100%;padding:10px;overflow:hidden}
 .home-row-3 .imagebox .pad{padding:10px;position:relative;float:left;width:100%}
+.home-row-3 .imagebox .pad .img-desc{width:100%;position:absolute;background-color:rgba(21,40,75,0.6);color:#fff;bottom:0;left:0;max-height:100%;padding:10px;text-align:center;line-height:1.1}
+.home-row-3 .imagebox .pad .img-desc h3{margin:0 0 15px 0}
 .home-row-3 .bg{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat}
 .home-row-3 img.placeholder{width:auto;height:150px;float:left}
 .home-row-3 .count-1 .imagebox{width:100% !important}

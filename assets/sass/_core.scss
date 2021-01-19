@@ -1210,6 +1210,21 @@ body.slide-text-open {
 			position: relative;
 			float: left;
 			width: 100%;
+			.img-desc {
+				width: 100%;
+				position: absolute;
+				background-color: rgba($primary, .6);
+				color: #fff;
+				bottom: 0;
+				left: 0;
+				max-height: 100%;
+				padding: 10px;
+				text-align: center;
+				line-height: 1.1;
+				h3 {
+					margin: 0 0 15px 0;
+				}
+			}
 		}
 	}
 	.bg {
@@ -1221,6 +1236,7 @@ body.slide-text-open {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+
 	}
 	img.placeholder {
 		width: auto;
