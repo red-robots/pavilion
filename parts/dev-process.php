@@ -1,6 +1,6 @@
 <?php  
 /* PROCESS */
-$post = get_post(34); 
+$post = get_post(778); 
 setup_postdata( $post );
 
 
